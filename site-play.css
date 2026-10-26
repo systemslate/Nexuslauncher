@@ -228,7 +228,8 @@ html[data-ui="frosted"] .privacy-strip,
 html[data-ui="frosted"] .card,
 html[data-ui="frosted"] .contact-card,
 html[data-ui="frosted"] .nexus-form,
-html[data-ui="frosted"] .toc {
+html[data-ui="frosted"] .toc,
+html[data-ui="frosted"] .look-card {
   background: color-mix(in srgb, var(--surface) 68%, transparent);
   border-color: color-mix(in srgb, var(--ink) 16%, transparent);
   backdrop-filter: blur(28px) saturate(130%);
@@ -251,7 +252,8 @@ html[data-ui="neumorph"] .icon-row,
 html[data-ui="neumorph"] .setup-card,
 html[data-ui="neumorph"] .stat,
 html[data-ui="neumorph"] .capability,
-html[data-ui="neumorph"] .cta {
+html[data-ui="neumorph"] .cta,
+html[data-ui="neumorph"] .look-card {
   border-color: transparent;
   background: var(--surface);
   box-shadow:
@@ -268,7 +270,7 @@ html[data-ui="liquid"] .nav {
 
 html[data-ui="liquid"] :is(
   .widget, .dock, .settings-widget, .mini-widget, .cell, .icon-row,
-  .setup-card, .cta, .privacy-strip, .card, .contact-card, .nexus-form, .toc, .stat
+  .setup-card, .cta, .privacy-strip, .card, .contact-card, .nexus-form, .toc, .stat, .look-card
 ) {
   position: relative;
   overflow: hidden;
@@ -283,19 +285,19 @@ html[data-ui="liquid"] :is(
     inset 0 -22px 32px color-mix(in srgb, var(--ink) 16%, transparent);
 }
 
-/* The sheet sits inside the blurred nav. A glass fill here samples that nav
-   and reads as empty, so the sheet stays on the page color and the cards
-   inside it use the surface. */
+/* The sheet is outside the nav so its cards can blur the page. The frame
+   itself stays clear; a frosted frame here would hide the cards' own glass. */
 html[data-ui="frosted"] .look-panel,
-html[data-ui="liquid"] .look-panel {
-  background: var(--bg);
-  border-color: var(--line-strong);
+html[data-ui="liquid"] .look-panel,
+html[data-ui="neumorph"] .look-panel {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  box-shadow: var(--shadow-card);
 }
 
-html[data-ui="liquid"] :is(.widget, .cell, .dock, .card, .cta, .settings-widget, .stat, .contact-card)::after {
+html[data-ui="liquid"] :is(.widget, .cell, .dock, .card, .cta, .settings-widget, .stat, .contact-card, .look-card)::after {
   content: "";
   position: absolute;
   inset: -30%;

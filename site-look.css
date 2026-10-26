@@ -63,8 +63,8 @@ html[data-wallpaper="grove"] body::before { background: var(--wall-grove); }
 
 .look-panel {
   display: none;
-  position: absolute;
-  z-index: 5;
+  position: fixed;
+  z-index: 80;
   top: calc(100% + 0.55rem);
   right: 0;
   width: min(24rem, calc(100vw - 1.4rem));
@@ -87,7 +87,7 @@ html[data-wallpaper="grove"] body::before { background: var(--wall-grove); }
 
 .look-card + .look-card { margin-top: 0.45rem; }
 
-.look.is-open .look-panel { display: block; }
+.look-panel.is-open { display: block; }
 
 .look-label {
   margin: 0 0 0.45rem 0.15rem;

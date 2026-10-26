@@ -186,7 +186,7 @@
   panel.appendChild(wall.wrap);
   panel.appendChild(type.wrap);
   host.appendChild(toggle);
-  host.appendChild(panel);
+  document.body.appendChild(panel);
   var cta = slot.querySelector(".nav-cta");
   if (cta) slot.insertBefore(host, cta);
   else slot.appendChild(host);
@@ -222,10 +222,28 @@
     reader.readAsDataURL(file);
   });
 
-  toggle.addEventListener("click", function () {
-    var open = host.classList.toggle("is-open");
+  function place() {
+    var rect = toggle.getBoundingClientRect();
+    panel.style.top = Math.round(rect.bottom + 8) + "px";
+    panel.style.right = Math.max(8, Math.round(window.innerWidth - rect.right)) + "px";
+  }
+
+  function setOpen(open) {
+    host.classList.toggle("is-open", open);
+    panel.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open) place();
+  }
+
+  toggle.addEventListener("click", function () {
+    setOpen(!host.classList.contains("is-open"));
   });
+  window.addEventListener("resize", function () {
+    if (panel.classList.contains("is-open")) place();
+  });
+  window.addEventListener("scroll", function () {
+    if (panel.classList.contains("is-open")) place();
+  }, true);
 
   panel.addEventListener("click", function (event) {
     var button = event.target.closest("button");
@@ -274,16 +292,10 @@
   });
 
   document.addEventListener("click", function (event) {
-    if (!host.contains(event.target)) {
-      host.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-    }
+    if (!host.contains(event.target) && !panel.contains(event.target)) setOpen(false);
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      host.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-    }
+    if (event.key === "Escape") setOpen(false);
   });
 })();
