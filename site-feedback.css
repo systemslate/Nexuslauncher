@@ -1,0 +1,193 @@
+/* ---------- feedback page ---------- */
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3.5vw, 2.5rem);
+  align-items: start;
+}
+
+.feedback-aside {
+  display: grid;
+  gap: 1rem;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.nexus-form {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 2vw, 1.4rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.field legend,
+.field > span {
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.field legend small {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.7rem;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.field textarea { resize: vertical; }
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.choice-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 99rem;
+  color: var(--ink-dim);
+  font-size: 0.82rem;
+}
+
+.choice-row input { accent-color: var(--ink); }
+
+.form-error { margin: 0; color: var(--ink); font-size: 0.88rem; }
+
+.field-missing { display: none; margin: 0; color: var(--ink); font-size: 0.8rem; font-weight: 600; }
+
+.field.is-missing {
+  padding: 0.55rem;
+  border-radius: 0.8rem;
+  outline: 2px solid var(--ink);
+  outline-offset: 0.15rem;
+}
+
+.field.is-missing .field-missing { display: block; }
+
+.field.is-missing input[type="text"],
+.field.is-missing input[type="email"],
+.field.is-missing select,
+.field.is-missing textarea,
+.field.is-missing .choice-row label {
+  border-color: var(--ink);
+}
+
+.form-thanks h2 { margin-bottom: 0.4rem; }
+.form-thanks p { margin: 0; color: var(--ink-dim); }
+
+.nexus-form[hidden],
+.form-thanks[hidden],
+.form-error[hidden] { display: none; }
+
+.form-note {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+  color: var(--ink-dim);
+  font-size: 0.88rem;
+}
+
+.form-note p { margin: 0; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-card {
+  padding: 1.3rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-widget);
+  background: linear-gradient(165deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 1.2%));
+}
+
+.contact-card h3 { margin-bottom: 0.45rem; font-size: 0.98rem; }
+.contact-card p { margin: 0; color: var(--ink-dim); font-size: 0.9rem; }
+
+.contact-card a { font-weight: 600; }
+
+/* the aside's panels, in the same widget language as the rest of the site */
+.card {
+  padding: 1.25rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-widget);
+  background: linear-gradient(165deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 1.2%));
+}
+
+.card .eyebrow { margin-bottom: 0.55rem; }
+
+.card p,
+.card li { color: var(--ink-dim); font-size: 0.9rem; }
+
+.card .aside-note { margin: 0; }
+
+.include-list {
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.include-list li {
+  position: relative;
+  margin: 0;
+  padding-left: 0.95rem;
+  color: var(--ink-dim);
+  font-size: 0.93rem;
+}
+
+.include-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 50%;
+  background: var(--cyan-400);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 58rem) {
+  .feedback-grid { grid-template-columns: 1fr; }
+  .feedback-aside { position: static; }
+  .field-row { grid-template-columns: 1fr; }
+}

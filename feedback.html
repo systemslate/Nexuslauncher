@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback — Nexus Launcher</title>
+  <meta name="description" content="Report a bug, request a feature or ask a question about Nexus Launcher. Every message reaches the developer directly.">
+  <meta name="theme-color" content="#070b13">
+  <link rel="stylesheet" href="site-fonts.css">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site-themes.css">
+  <link rel="stylesheet" href="site-look.css">
+  <link rel="stylesheet" href="site-nav.css">
+  <link rel="stylesheet" href="site-ui.css">
+  <link rel="stylesheet" href="site-footer.css">
+  <link rel="stylesheet" href="site-page.css">
+  <link rel="stylesheet" href="site-feedback.css">
+  <link rel="stylesheet" href="site-play.css">
+  <script src="site-ui-boot.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Nexus Launcher — home">
+      <svg class="brand-mark" viewBox="0 0 108 108" role="img" aria-label="Nexus Launcher">
+        <g transform="translate(4 6)" fill="rgb(42 46 51)">
+          <path d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+          <path d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+        </g>
+        <path fill="rgb(240 242 245)" d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+        <path fill="rgb(240 242 245)" d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+        <path fill="rgb(143 200 224)" d="M51.5 47.95l3.07 1.77v3.56l-3.07 1.77-3.07-1.77v-3.56z"/>
+      </svg>
+      <span class="brand-word">Nexus</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="setup.html">Setups</a>
+      <a href="NEXUS_USER_GUIDE.html">User guide</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="feedback.html" aria-current="page">Feedback</a>
+    </nav>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.systemslate.nexuslauncher">Get the app</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Feedback</p>
+      <h1>Tell us what broke.</h1>
+      <p class="lede">Bugs, rough edges, missing features, or a setting you cannot find &mdash; all of
+        it is useful. Nexus is built by one developer, so messages go straight to the person who can
+        fix the problem.</p>
+      <ul class="page-meta">
+        <li>Takes about two minutes</li>
+        <li>Replies come from systemslate.dev@gmail.com</li>
+        <li>No account needed</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-flush">
+    <div class="wrap feedback-grid">
+
+      <div>
+        <form class="nexus-form" data-feedback-form method="post" novalidate
+          action="https://docs.google.com/forms/d/e/1FAIpQLScDoE7vKFqpzELFaHapqYbMyIHLS0SCubAxIFDFFaGcgdz5iw/formResponse">
+          <fieldset class="field">
+            <legend>What kind of feedback is this?</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="entry.858958643" value="Bug report" required>Bug report</label>
+              <label><input type="radio" name="entry.858958643" value="Feature request">Feature request</label>
+              <label><input type="radio" name="entry.858958643" value="General feedback">General feedback</label>
+            </div>
+            <p class="field-missing">Choose one.</p>
+          </fieldset>
+
+          <label class="field">
+            <span>Which area is it about?</span>
+            <select name="entry.2093958350" required>
+              <option value="">Choose an area</option>
+              <option>Home screen</option>
+              <option>App drawer</option>
+              <option>Dock</option>
+              <option>Widgets</option>
+              <option>Wallpaper Studio</option>
+              <option>Canvas setups</option>
+              <option>Immersive Mode / Nexus Island</option>
+              <option>Gestures</option>
+              <option>Search</option>
+              <option>News feed</option>
+              <option>App lock</option>
+              <option>Backup / Nova import</option>
+              <option>Performance / battery</option>
+              <option>Other</option>
+            </select>
+            <p class="field-missing">Choose an area.</p>
+          </label>
+
+          <label class="field">
+            <span>Your message</span>
+            <textarea name="entry.183810802" rows="5" required placeholder="What is working, what is broken, or what you would like to see."></textarea>
+            <p class="field-missing">Write a message.</p>
+          </label>
+
+          <label class="field">
+            <span>What did you expect to happen?</span>
+            <textarea name="entry.1648259636" rows="3"></textarea>
+          </label>
+
+          <label class="field">
+            <span>Steps to reproduce</span>
+            <textarea name="entry.1825434819" rows="3"></textarea>
+          </label>
+
+          <fieldset class="field">
+            <legend>How often does it happen?</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="entry.819413189" value="Every time">Every time</label>
+              <label><input type="radio" name="entry.819413189" value="Sometimes">Sometimes</label>
+              <label><input type="radio" name="entry.819413189" value="Once">Once</label>
+            </div>
+          </fieldset>
+
+          <div class="field-row">
+            <label class="field"><span>Device model</span><input type="text" name="entry.2073275269" autocomplete="off"></label>
+            <label class="field"><span>Android version</span><input type="text" name="entry.1264604027" autocomplete="off"></label>
+            <label class="field"><span>Nexus version</span><input type="text" name="entry.445166228" autocomplete="off"></label>
+          </div>
+
+          <fieldset class="field">
+            <legend>How would you rate Nexus overall? <small>1 is poor, 5 is great.</small></legend>
+            <div class="choice-row">
+              <label><input type="radio" name="entry.1395047226" value="1">1</label>
+              <label><input type="radio" name="entry.1395047226" value="2">2</label>
+              <label><input type="radio" name="entry.1395047226" value="3">3</label>
+              <label><input type="radio" name="entry.1395047226" value="4">4</label>
+              <label><input type="radio" name="entry.1395047226" value="5">5</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Would you recommend Nexus to a friend?</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="entry.138561640" value="Yes">Yes</label>
+              <label><input type="radio" name="entry.138561640" value="Maybe">Maybe</label>
+              <label><input type="radio" name="entry.138561640" value="No">No</label>
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span>What other launcher do you use or come from?</span>
+            <select name="entry.1284803775">
+              <option value="">Skip</option>
+              <option>Nova</option>
+              <option>Smart Launcher</option>
+              <option>Lawnchair</option>
+              <option>Pixel Launcher</option>
+              <option>One UI Home</option>
+              <option>Other</option>
+              <option>None</option>
+            </select>
+          </label>
+
+          <fieldset class="field">
+            <legend>Can I contact you about this?</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="entry.2037975371" value="Yes">Yes</label>
+              <label><input type="radio" name="entry.2037975371" value="No">No</label>
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="entry.1300399545" autocomplete="email" placeholder="Only if you want a reply">
+            <p class="field-missing">Enter a valid email, or leave this blank.</p>
+          </label>
+
+          <p class="form-error" data-feedback-error hidden>The message did not send. Use the email link below.</p>
+          <button class="btn btn-primary" type="submit" data-feedback-send>Send feedback</button>
+        </form>
+
+        <div class="form-thanks" data-feedback-thanks hidden>
+          <h2>Sent.</h2>
+          <p>Your message was sent. If you left an email, the reply comes from systemslate.dev@gmail.com.</p>
+        </div>
+
+        <div class="form-note">
+          <p>Prefer email? Write to
+            <a href="mailto:systemslate.dev@gmail.com?subject=Nexus%20Launcher%20feedback">systemslate.dev@gmail.com</a>
+            &mdash; screenshots and crash logs are welcome there too.</p>
+          <p>Answers are stored with the existing Google Form, so
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s privacy policy</a>
+            still applies. The
+            <a href="https://forms.gle/UbPsBNP7R9MkSvMu8" target="_blank" rel="noopener">original form</a>
+            stays available if this one will not send.</p>
+        </div>
+      </div>
+
+      <aside class="feedback-aside">
+        <div class="card">
+          <p class="eyebrow">What the form asks</p>
+          <ul class="include-list">
+            <li>The kind of feedback &mdash; bug, feature request or general.</li>
+            <li>Which area it is about, such as the drawer, dock or widgets.</li>
+            <li>What you expected to happen, and what happened instead.</li>
+            <li>The steps that reproduce it, and how often it happens.</li>
+            <li>Device model, Android version and Nexus version.</li>
+            <li>An email address, only if you want a reply.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <p class="eyebrow">Crash logs</p>
+          <p class="aside-note">
+            After a crash, open <span class="path">Settings &rsaquo; Feedback &rsaquo; Crash logs</span>.
+            Copy the entry, or use the share action to send it as plain text. Logs stay on your
+            device until you choose to send one.</p>
+        </div>
+
+        <div class="card">
+          <p class="eyebrow">Before you write</p>
+          <p class="aside-note">
+            The <a href="NEXUS_USER_GUIDE.html">user guide</a> covers every screen and has a
+            troubleshooting table for common problems. It may answer the question faster.</p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Other routes</p>
+        <h2>Where each kind of message belongs.</h2>
+        <p>Play Store reviews are useful but hard to reply to. These channels get a response.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Bug report</h3>
+          <p>Something behaves differently from what the guide describes. Include the steps that
+            reproduce it.</p>
+        </div>
+        <div class="contact-card">
+          <h3>Feature request</h3>
+          <p>Describe the problem you are trying to solve, not only the setting you want. That makes
+            the request far easier to act on.</p>
+        </div>
+        <div class="contact-card">
+          <h3>Privacy question</h3>
+          <p>Anything unclear in the <a href="privacy.html">privacy policy</a> &mdash; ask directly
+            and you will get a plain answer.</p>
+        </div>
+        <div class="contact-card">
+          <h3>Translation fix</h3>
+          <p>Nexus ships in 10 languages. If a string reads wrong in yours, send the language and the
+            screen it appears on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="Nexus Launcher — home">
+        <svg class="brand-mark" viewBox="0 0 108 108" role="img" aria-label="Nexus Launcher">
+          <g transform="translate(4 6)" fill="rgb(42 46 51)">
+            <path d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+            <path d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+          </g>
+          <path fill="rgb(240 242 245)" d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+          <path fill="rgb(240 242 245)" d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+          <path fill="rgb(143 200 224)" d="M51.5 47.95l3.07 1.77v3.56l-3.07 1.77-3.07-1.77v-3.56z"/>
+        </svg>
+        <span class="brand-word">Nexus</span>
+      </a>
+      <p>A custom Android home screen by System Slate. Your layout stays on your device.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="setup.html">Setups</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.systemslate.nexuslauncher">Google Play</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="NEXUS_USER_GUIDE.html">User guide</a></li>
+        <li><a href="feedback.html">Send feedback</a></li>
+        <li><a href="mailto:systemslate.dev@gmail.com">Email us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy.html">Privacy policy</a></li>
+        <li><a href="privacy.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <p>&copy; 2026 System Slate. Nexus Launcher is not affiliated with Google or Android.</p>
+    <p>systemslate.dev@gmail.com</p>
+  </div>
+</footer>
+<script src="site-look.js" defer></script>
+<script src="site-behavior.js" defer></script>
+<script src="site-badges.js" defer></script>
+</body>
+</html>

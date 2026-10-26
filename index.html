@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Launcher — your home screen, finally yours</title>
+  <meta name="description" content="Nexus Launcher is a custom Android home screen with flexible grids, three app drawer modes, a themed widget collection and no ads. Your data stays on your device.">
+  <meta name="theme-color" content="#070b13">
+  <meta property="og:title" content="Nexus Launcher — your home screen, finally yours">
+  <meta property="og:description" content="Flexible grids, three drawer modes, themed widgets, frosted glass. No ads, no accounts, nothing leaves your phone.">
+  <meta property="og:image" content="assets/shots/01-hero.jpg">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="site-fonts.css">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site-themes.css">
+  <link rel="stylesheet" href="site-look.css">
+  <link rel="stylesheet" href="site-nav.css">
+  <link rel="stylesheet" href="site-ui.css">
+  <link rel="stylesheet" href="site-footer.css">
+  <link rel="stylesheet" href="site-play.css">
+  <link rel="stylesheet" href="site-home.css">
+  <link rel="stylesheet" href="site-home-more.css">
+  <script src="site-ui-boot.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- launcher glyphs, drawn once and referenced with <use> -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-widgets" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2.2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2.2"/><rect x="13" y="10" width="8" height="11" rx="2.2"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h9M17 17h3"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="15" cy="17" r="2"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.4 12 4l8 6.4V19a1.4 1.4 0 0 1-1.4 1.4h-4V14H9.4v6.4h-4A1.4 1.4 0 0 1 4 19z"/></symbol>
+  <symbol id="i-fullscreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-1.2-.9-1.7-.9-2.8 0-.9.7-1.6 1.6-1.6H17a4 4 0 0 0 4-4c0-4.4-4-7.6-9-7.6z"/><path d="M8 10h.01M12 7.5h.01M16 10h.01"/></symbol>
+  <symbol id="i-shape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2c2.8 0 4.2 0 5.4.6a5 5 0 0 1 2.8 2.8c.6 1.2.6 2.6.6 5.4s0 4.2-.6 5.4a5 5 0 0 1-2.8 2.8c-1.2.6-2.6.6-5.4.6s-4.2 0-5.4-.6a5 5 0 0 1-2.8-2.8c-.6-1.2-.6-2.6-.6-5.4s0-4.2.6-5.4a5 5 0 0 1 2.8-2.8c1.2-.6 2.6-.6 5.4-.6z"/></symbol>
+  <symbol id="i-pill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4"/><circle cx="17" cy="12" r="1.5"/></symbol>
+  <symbol id="i-swipe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h11"/><path d="M12.5 7.5 17 12l-4.5 4.5"/><path d="M4 6v12"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 4 1.5 5.5 2 6H4c.5-.5 2-2 2-6z"/><path d="M10 18.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10" width="15" height="10" rx="3"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5a2 2 0 0 1 2-2h5v16H6a2 2 0 0 0-2 2z"/><path d="M20 5.5a2 2 0 0 0-2-2h-5v16h5a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-tablet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M10 16.5h4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5v17L19 12z"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Nexus Launcher — home">
+      <svg class="brand-mark" viewBox="0 0 108 108" role="img" aria-label="Nexus Launcher">
+        <g transform="translate(4 6)" fill="rgb(42 46 51)">
+          <path d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+          <path d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+        </g>
+        <path fill="rgb(240 242 245)" d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+        <path fill="rgb(240 242 245)" d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+        <path fill="rgb(143 200 224)" d="M51.5 47.95l3.07 1.77v3.56l-3.07 1.77-3.07-1.77v-3.56z"/>
+      </svg>
+      <span class="brand-word">Nexus</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="setup.html">Setups</a>
+      <a href="NEXUS_USER_GUIDE.html">User guide</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.systemslate.nexuslauncher">Get the app</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ hero: a home screen you can poke at ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Android launcher &middot; no ads</p>
+        <h1 class="hero-title">Your home screen,<br><span class="hero-accent">finally yours.</span></h1>
+        <p class="lede">A custom Android launcher with a grid that flexes, a drawer with three ways to
+          look, and a widget set drawn by the launcher itself. No ads, no accounts, nothing leaves
+          your phone unless you ask it to.</p>
+        <div class="dock">
+          <a class="dock-main" href="https://play.google.com/store/apps/details?id=com.systemslate.nexuslauncher">
+            <svg aria-hidden="true" width="15" height="15"><use href="#i-play"></use></svg>Get it on Google Play</a>
+          <a class="dock-alt" href="setup.html">See setups</a>
+        </div>
+        <ul class="hero-meta">
+          <li>Android 8.0+</li><li>Free to download</li><li>Data stays on device</li>
+        </ul>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="island hero-island" data-island aria-hidden="true">
+          <span class="island-glyph" data-island-glyph>&#9835;</span>
+          <span data-island-label>Wheels on the Bus</span>
+          <span class="island-bars" data-island-bars><i></i><i></i><i></i><i></i></span>
+        </div>
+        <figure class="widget hero-widget tilt-l">
+          <div class="widget-bar"><span data-hero-label>Home</span><span class="bar-dots"><i></i><i></i><i></i></span></div>
+          <div class="widget-media">
+            <img data-hero-shot src="assets/shots/01-hero.jpg" width="760" height="1351"
+                 alt="A Nexus home screen with the Living Mosaic widget, app icons and a frosted dock.">
+          </div>
+        </figure>
+        <aside class="mini-widget tilt-r float-slow" aria-hidden="true">
+          <p class="mini-time">09:41</p>
+          <p class="mini-day">Mon 26 &middot; Home</p>
+          <div class="mini-row"><span>18&deg; &middot; Clear</span><b>64%</b></div>
+          <div class="mini-meter"><i></i></div>
+        </aside>
+        <div class="pagedots" role="group" aria-label="Preview pages">
+          <button type="button" data-hero-dot aria-pressed="true" aria-label="Home" data-label="Home" data-src="assets/shots/01-hero.jpg" data-alt="A Nexus home screen with the Living Mosaic widget, app icons and a frosted dock."></button>
+          <button type="button" data-hero-dot aria-pressed="false" aria-label="Mosaic" data-label="Mosaic" data-src="assets/shots/02-mosaic.jpg" data-alt="A three by six widget mosaic combining a clock, weather and calendar on one Nexus home screen."></button>
+          <button type="button" data-hero-dot aria-pressed="false" aria-label="Focus" data-label="Focus" data-src="assets/shots/03-focus.jpg" data-alt="Focus mode and gesture navigation on a Nexus home screen."></button>
+          <button type="button" data-hero-dot aria-pressed="false" aria-label="Glass" data-label="Glass" data-src="assets/shots/04-glass.jpg" data-alt="Frosted glass and liquid glass on a Nexus home screen."></button>
+          <button type="button" data-hero-dot aria-pressed="false" aria-label="Layouts" data-label="Layouts" data-src="assets/shots/05-layouts.jpg" data-alt="A custom home screen layout in Nexus Launcher."></button>
+          <button type="button" data-hero-dot aria-pressed="false" aria-label="Drawer" data-label="Drawer" data-src="assets/shots/06-drawer.jpg" data-alt="The Nexus app drawer in grid, list and category layouts."></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap hero-shortcuts">
+      <nav class="icon-row" aria-label="Jump into the site">
+        <a class="icon-tile tint-cyan" href="#widgets"><span class="tile-face"><svg aria-hidden="true"><use href="#i-widgets"></use></svg></span><span>Widgets</span></a>
+        <a class="icon-tile tint-violet" href="#drawer"><span class="tile-face"><svg aria-hidden="true"><use href="#i-grid"></use></svg></span><span>Drawer</span></a>
+        <a class="icon-tile tint-teal" href="#settings"><span class="tile-face"><svg aria-hidden="true"><use href="#i-sliders"></use></svg></span><span>Settings</span></a>
+        <a class="icon-tile tint-blue" href="#large"><span class="tile-face"><svg aria-hidden="true"><use href="#i-tablet"></use></svg></span><span>Tablets</span></a>
+        <a class="icon-tile tint-rose" href="privacy.html"><span class="tile-face"><svg aria-hidden="true"><use href="#i-lock"></use></svg></span><span>Privacy</span></a>
+        <a class="icon-tile tint-grape" href="NEXUS_USER_GUIDE.html"><span class="tile-face"><svg aria-hidden="true"><use href="#i-book"></use></svg></span><span>Guide</span></a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============ numbers, as four little widgets ============ -->
+  <section class="section section-stats">
+    <div class="wrap stat-row">
+      <div class="stat"><b>14</b><span>icon shapes</span></div>
+      <div class="stat"><b>14</b><span>fonts</span></div>
+      <div class="stat"><b>4&ndash;12</b><span>grid columns</span></div>
+      <div class="stat"><b>10</b><span>languages</span></div>
+    </div>
+  </section>
+
+  <div class="dots-divider" aria-hidden="true"><span>Widgets</span><i></i><i></i><i></i></div>
+
+  <!-- ============ living mosaic ============ -->
+  <section class="section" id="widgets">
+    <div class="wrap split">
+      <div class="split-art">
+        <figure class="widget tilt-r">
+          <div class="widget-bar"><span>Living Mosaic</span><span class="bar-dots"><i></i><i></i><i></i></span></div>
+          <div class="widget-media">
+            <img src="assets/shots/02-mosaic.jpg" width="760" height="1351"
+                 alt="A three by six widget mosaic combining a clock, weather and calendar on one Nexus home screen.">
+          </div>
+        </figure>
+      </div>
+      <div class="split-copy">
+        <p class="eyebrow">Living Mosaic</p>
+        <h2>Widgets that earn their space.</h2>
+        <p>Most launchers drop a widget on a grid and hope it lines up. Nexus widgets are built as a
+          set: a clock, the weather and your next few events share one surface, resize together, and
+          keep the same corner radius and spacing.</p>
+        <ul class="point-list">
+          <li>Living Mosaic resizes freely, from a small tile to most of a page.</li>
+          <li>Shortcut Box, App Box and Live Apps hold apps and shortcuts in one tile.</li>
+          <li>Clock, weather, agenda, battery, music, notes, search, performance and more.</li>
+          <li>Drawn by the launcher, so they follow your theme, accent and UI style.</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-ghost" href="NEXUS_USER_GUIDE.html#ch8">Widgets in the guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="dots-divider" aria-hidden="true"><span>Everything else</span><i></i><i></i><i></i></div>
+
+  <!-- ============ bento of the rest ============ -->
+  <section class="section" id="more">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow">What is inside</p>
+        <h2>Six things you will notice first.</h2>
+        <p>Everything below is in the shipping app &mdash; no roadmap, no upgrade tier.</p>
+      </div>
+
+      <div class="bento">
+        <article class="cell cell-wide" id="drawer">
+          <span class="icon-badge"><svg aria-hidden="true"><use href="#i-grid"></use></svg></span>
+          <div class="cell-copy">
+            <p class="cell-tag">App drawer</p><h3>Three drawer modes</h3>
+            <p>Grid, List and Categories. Categories groups apps onto cards with three presentations
+              &mdash; Spatial, Strip or List &mdash; and search covers apps and contacts in one field.</p>
+            <div class="mode-switch" data-drawer-modes role="radiogroup" aria-label="Drawer mode">
+              <button type="button" role="radio" data-drawer="grid" aria-checked="true">Grid</button>
+              <button type="button" role="radio" data-drawer="list" aria-checked="false">List</button>
+              <button type="button" role="radio" data-drawer="categories" aria-checked="false">Categories</button>
+            </div>
+            <figure class="drawer-shot">
+              <img data-drawer-shot src="assets/guide/app-drawer-grid.jpg" width="575" height="1280" alt="The app drawer in Grid mode, with labeled icons and an A to Z rail.">
+              <button type="button" class="shot-enlarge" data-enlarge>Enlarge</button>
+            </figure>
+          </div>
+        </article>
+
+        <article class="cell cell-third tint-violet" id="glass" data-folder>
+          <span class="icon-badge"><svg aria-hidden="true"><use href="#i-palette"></use></svg></span>
+          <div class="cell-copy">
+            <p class="cell-tag">Appearance</p><h3>Frosted and liquid glass</h3>
+            <p>Four UI styles change how the dock, folders and widgets are drawn, with opacity and
+              refraction you control.</p>
+            <p class="chip-row"><span class="chip">Frosted</span><span class="chip">Liquid</span></p>
+            <button type="button" class="cell-open-label" aria-expanded="false" aria-controls="glass-shot">Open</button>
+          </div>
+          <figure class="cell-shot" id="glass-shot" hidden>
+            <img src="assets/shots/04-glass.jpg" width="760" height="1351" alt="Frosted glass and liquid glass on a Nexus home screen." loading="lazy">
+          </figure>
+        </article>
+
+        <article class="cell cell-half tint-rose" id="gestures" data-folder>
+          <span class="icon-badge"><svg aria-hidden="true"><use href="#i-swipe"></use></svg></span>
+          <div class="cell-copy">
+            <p class="cell-tag">Gestures</p><h3>Gestures, wherever you tap</h3>
+            <p>Swipe up, swipe down, double tap and two-finger gestures, assigned to the home screen,
+              a folder or a single icon.</p>
+            <button type="button" class="cell-open-label" aria-expanded="false" aria-controls="gestures-shot">Open</button>
+          </div>
+          <figure class="cell-shot" id="gestures-shot" hidden>
+            <img src="assets/shots/03-focus.jpg" width="760" height="1351" alt="Focus mode and gesture navigation on a Nexus home screen." loading="lazy">
+          </figure>
+        </article>
+
+        <article class="cell cell-half tint-teal" id="layouts" data-folder>
+          <span class="icon-badge"><svg aria-hidden="true"><use href="#i-sliders"></use></svg></span>
+          <div class="cell-copy">
+            <p class="cell-tag">Layout</p><h3>Layouts that flex</h3>
+            <p>Columns from 4 to 12 and rows from 5 to 15, then spacing, icon size and label size.
+              Anything on the grid resizes.</p>
+            <p class="chip-row"><span class="chip">4 columns</span><span class="chip">12 columns</span></p>
+            <button type="button" class="cell-open-label" aria-expanded="false" aria-controls="layouts-shot">Open</button>
+          </div>
+          <figure class="cell-shot" id="layouts-shot" hidden>
+            <img src="assets/shots/05-layouts.jpg" width="760" height="1351" alt="A custom home screen layout in Nexus Launcher." loading="lazy">
+          </figure>
+        </article>
+
+        <article class="cell cell-third tint-blue" data-folder>
+          <span class="icon-badge"><svg aria-hidden="true"><use href="#i-widgets"></use></svg></span>
+          <div class="cell-copy">
+            <p class="cell-tag">Widgets</p><h3>A widget set, not a widget</h3>
+            <p>Living Mosaic, Shortcut Box, App Box and Live Apps, all themed with the launcher.</p>
+            <p class="chip-row"><span class="chip">Mosaic</span><span class="chip">Boxes</span></p>
+            <button type="button" class="cell-open-label" aria-expanded="false" aria-controls="widgets-shot">Open</button>
+          </div>
+          <figure class="cell-shot" id="widgets-shot" hidden>
+            <img src="assets/shots/07-widgets.jpg" width="760" height="1351" alt="The Nexus widget collection on a home screen." loading="lazy">
+          </figure>
+        </article>
+
+        <article class="cell cell-wide tint-grape" id="immersive" data-folder>
+          <span class="icon-badge"><svg aria-hidden="true"><use href="#i-fullscreen"></use></svg></span>
+          <div class="cell-copy">
+            <p class="cell-tag">Immersive</p><h3>Notifications, without leaving</h3>
+            <p>Hide the system bars, keep the gestures. Read and reply from a sheet inside the
+              launcher, with unread badges on the icons that need them.</p>
+            <button type="button" class="cell-open-label" aria-expanded="false" aria-controls="immersive-shot">Open</button>
+          </div>
+          <figure class="cell-shot" id="immersive-shot" hidden>
+            <img src="assets/shots/08-immersive.jpg" width="760" height="1351" alt="Immersive mode and the in-launcher notification sheet." loading="lazy">
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="dots-divider" aria-hidden="true"><span>Settings</span><i></i><i></i><i></i></div>
+
+  <!-- ============ settings, drawn as a settings page ============ -->
+  <section class="section" id="settings">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow">Settings</p>
+        <h2>Two taps from anywhere.</h2>
+        <p>Settings opens on one hub with a search field. These are the pages people open twice
+          &mdash; each row links to the chapter that explains it.</p>
+      </div>
+
+      <div class="settings-widget">
+        <div class="widget-bar"><span>Settings</span><span class="bar-dots"><i></i><i></i><i></i></span></div>
+        <div class="settings-groups">
+          <div class="settings-group">
+            <p class="group-label">Layout</p>
+            <a class="settings-row" href="NEXUS_USER_GUIDE.html#ch2"><span class="icon-badge"><svg aria-hidden="true"><use href="#i-home"></use></svg></span><span class="row-text"><b>Home Screen</b><small>Grid, spacing, labels, transitions</small></span><span class="row-chev" aria-hidden="true">&rsaquo;</span></a>
+            <a class="settings-row" href="NEXUS_USER_GUIDE.html#ch5"><span class="icon-badge"><svg aria-hidden="true"><use href="#i-grid"></use></svg></span><span class="row-text"><b>App Drawer</b><small>Layout, search, categories</small></span><span class="row-chev" aria-hidden="true">&rsaquo;</span></a>
+            <a class="settings-row" href="NEXUS_USER_GUIDE.html#ch14"><span class="icon-badge"><svg aria-hidden="true"><use href="#i-fullscreen"></use></svg></span><span class="row-text"><b>Immersive Mode</b><small>Status row, pills, clock, battery</small></span><span class="row-chev" aria-hidden="true">&rsaquo;</span></a>
+          </div>
+          <div class="settings-group">
+            <p class="group-label">Appearance</p>
+            <a class="settings-row" href="NEXUS_USER_GUIDE.html#ch10"><span class="icon-badge"><svg aria-hidden="true"><use href="#i-palette"></use></svg></span><span class="row-text"><b>Theme</b><small>Mode, palette, accent &amp; UI style</small></span><span class="row-chev" aria-hidden="true">&rsaquo;</span></a>
+            <a class="settings-row" href="NEXUS_USER_GUIDE.html#ch11"><span class="icon-badge"><svg aria-hidden="true"><use href="#i-shape"></use></svg></span><span class="row-text"><b>Icons</b><small>Icon pack, shape &amp; themed icons</small></span><span class="row-chev" aria-hidden="true">&rsaquo;</span></a>
+            <a class="settings-row" href="NEXUS_USER_GUIDE.html#ch15"><span class="icon-badge"><svg aria-hidden="true"><use href="#i-pill"></use></svg></span><span class="row-text"><b>Nexus Island</b><small>Live pill on the home screen</small></span><span class="row-chev" aria-hidden="true">&rsaquo;</span></a>
+          </div>
+          <div class="settings-group">
+            <p class="group-label">Behavior</p>
+            <a class="settings-row" href="NEXUS_USER_GUIDE.html#ch4"><span class="icon-badge"><svg aria-hidden="true"><use href="#i-swipe"></use></svg></span><span class="row-text"><b>Gestures</b><small>Swipe actions, double tap</small></span><span class="row-chev" aria-hidden="true">&rsaquo;</span></a>
+            <a class="settings-row" href="NEXUS_USER_GUIDE.html#ch16"><span class="icon-badge"><svg aria-hidden="true"><use href="#i-bell"></use></svg></span><span class="row-text"><b>Notifications &amp; Permissions</b><small>Badges and permissions</small></span><span class="row-chev" aria-hidden="true">&rsaquo;</span></a>
+            <a class="settings-row" href="NEXUS_USER_GUIDE.html#ch17"><span class="icon-badge"><svg aria-hidden="true"><use href="#i-lock"></use></svg></span><span class="row-text"><b>App Lock</b><small>Which apps ask you to unlock</small></span><span class="row-chev" aria-hidden="true">&rsaquo;</span></a>
+          </div>
+        </div>
+        <p class="settings-more"><a href="NEXUS_USER_GUIDE.html#ch21">All 13 settings pages, mapped &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ large screens ============ -->
+  <section class="tablet-band" id="large">
+    <div class="wrap section">
+      <div class="tablet-head">
+        <p class="eyebrow">Large screens</p>
+        <h2>Made for tablets and foldables too.</h2>
+        <p>A phone layout stretched across a tablet looks like a field with too few trees. Nexus
+          keeps a separate large-screen grid, used in both orientations, so columns and rows can be
+          edited independently of the phone layout.</p>
+        <ul class="point-list">
+          <li>Separate large-screen grid, applied in landscape and portrait.</li>
+          <li>Dock, status row and Nexus Island scale with the screen.</li>
+          <li>The same backup restores on either form factor.</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-ghost" href="NEXUS_USER_GUIDE.html#ch1">First launch</a>
+        </div>
+      </div>
+      <div class="tablet-shots">
+        <figure class="widget">
+          <div class="widget-bar"><span>Large screen</span><span class="bar-dots"><i></i><i></i><i></i></span></div>
+          <div class="widget-media">
+            <img src="assets/shots/tablet-overview.jpg" width="1600" height="900" loading="lazy"
+                 alt="Nexus Launcher on a large screen, showing the wide widget mosaic and dock.">
+          </div>
+        </figure>
+        <figure class="widget">
+          <div class="widget-bar"><span>Mosaic &rarr; Focus</span><span class="bar-dots"><i></i><i></i><i></i></span></div>
+          <div class="widget-media">
+            <img src="assets/shots/tablet-mosaic.jpg" width="1600" height="900" loading="lazy"
+                 alt="The Nexus mosaic and focus layouts on a large screen.">
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ privacy ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="privacy-strip">
+        <div>
+          <p class="eyebrow">Privacy</p>
+          <h2>Nothing leaves your phone unless you ask.</h2>
+          <p>Your layout, wallpapers, notes and backups live on your device. There are no accounts,
+            no ads and no analytics SDKs. The only network requests are the ones you trigger &mdash;
+            weather, a news feed you added, or a web search.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-ghost" href="privacy.html">Read the privacy policy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ closing call to action ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta">
+        <div class="island" aria-hidden="true">
+          <span class="island-glyph">&#9835;</span><span>Ready when you are</span>
+          <span class="island-bars"><i></i><i></i><i></i><i></i></span>
+        </div>
+        <h2>Start with a blank grid.</h2>
+        <p>Install Nexus, run the seven-card setup, and change any of it later. Every step in setup
+          is skippable, and nothing is permanent.</p>
+        <div class="dock">
+          <a class="dock-main" href="https://play.google.com/store/apps/details?id=com.systemslate.nexuslauncher">Get it on Google Play</a>
+          <a class="dock-alt" href="NEXUS_USER_GUIDE.html">Read the guide</a>
+        </div>
+        <p class="cta-fine">Android 8.0+ &middot; Free to download &middot; com.systemslate.nexuslauncher</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="Nexus Launcher — home">
+        <svg class="brand-mark" viewBox="0 0 108 108" role="img" aria-label="Nexus Launcher">
+          <g transform="translate(4 6)" fill="rgb(42 46 51)"><path d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/><path d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/></g>
+          <path fill="rgb(240 242 245)" d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+          <path fill="rgb(240 242 245)" d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+          <path fill="rgb(143 200 224)" d="M51.5 47.95l3.07 1.77v3.56l-3.07 1.77-3.07-1.77v-3.56z"/>
+        </svg>
+        <span class="brand-word">Nexus</span>
+      </a>
+      <p>A custom Android home screen by System Slate. Your layout stays on your device.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul><li><a href="index.html">Home</a></li><li><a href="setup.html">Setups</a></li><li><a href="https://play.google.com/store/apps/details?id=com.systemslate.nexuslauncher">Google Play</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul><li><a href="NEXUS_USER_GUIDE.html">User guide</a></li><li><a href="feedback.html">Send feedback</a></li><li><a href="mailto:systemslate.dev@gmail.com">Email us</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="privacy.html#contact">Contact</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <p>&copy; 2026 System Slate. Nexus Launcher is not affiliated with Google or Android.</p>
+    <p>systemslate.dev@gmail.com</p>
+  </div>
+</footer>
+<script src="site-look.js" defer></script>
+<script src="site-behavior.js" defer></script>
+<script src="site-badges.js" defer></script>
+</body>
+</html>

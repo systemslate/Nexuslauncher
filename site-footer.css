@@ -1,0 +1,68 @@
+/* Nexus Launcher website — footer.
+   Shared by every page; loaded after site-ui.css. */
+
+.site-footer {
+  margin-top: clamp(3rem, 7vw, 6rem);
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1.7fr) repeat(3, minmax(8rem, 1fr));
+  gap: 2rem;
+  width: min(100% - (var(--gutter) * 2), var(--page));
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 5vw, 3.6rem) 2rem;
+}
+
+.footer-brand p {
+  max-width: 22rem;
+  margin-top: 0.85rem;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+.footer-col h4 {
+  margin-bottom: 0.8rem;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer-col ul { margin: 0; padding: 0; list-style: none; }
+.footer-col li { margin-bottom: 0.4rem; }
+.footer-col a { color: var(--ink-dim); font-size: 0.9rem; }
+.footer-col a:hover { color: var(--ink); }
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+  width: min(100% - (var(--gutter) * 2), var(--page));
+  margin-inline: auto;
+  padding-block: 1.2rem 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-legal p { margin: 0; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 60rem) {
+  .footer-inner { grid-template-columns: repeat(2, 1fr); }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 44rem) {
+  .footer-inner { grid-template-columns: 1fr; gap: 1.6rem; }
+}

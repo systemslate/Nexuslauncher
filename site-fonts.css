@@ -1,0 +1,39 @@
+/* Nexus Launcher website — self-hosted type.
+   Subsets of fonts that ship inside the launcher (SIL Open Font License):
+   Quicksand for display, Outfit for running text, Space Mono for status labels.
+   Self-hosted so the site makes no third-party requests. */
+
+@font-face {
+  font-family: "Nexus Round";
+  src: url("assets/fonts/quicksand.woff") format("woff");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nexus Text";
+  src: url("assets/fonts/outfit.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nexus Mono";
+  src: url("assets/fonts/space-mono.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* App typography list. Same files the launcher ships. */
+@font-face { font-family: "Nexus Default"; src: url("assets/fonts/google_sans_flex.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Roboto"; src: url("assets/fonts/roboto.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/inter.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("assets/fonts/manrope.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "IBM Plex Sans"; src: url("assets/fonts/ibm_plex_sans.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Lora"; src: url("assets/fonts/lora.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Playpen"; src: url("assets/fonts/playpen_sans.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Elms Sans"; src: url("assets/fonts/elms_sans.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Bitcount"; src: url("assets/fonts/bitcount_single.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }

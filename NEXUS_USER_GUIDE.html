@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User guide — Nexus Launcher</title>
+  <meta name="description" content="The Nexus Launcher user guide: home screen, drawer, widgets, gestures, themes and troubleshooting. Covers version 1.0.2.">
+  <meta name="theme-color" content="#070b13">
+  <link rel="stylesheet" href="site-fonts.css">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site-themes.css">
+  <link rel="stylesheet" href="site-look.css">
+  <link rel="stylesheet" href="site-nav.css">
+  <link rel="stylesheet" href="site-ui.css">
+  <link rel="stylesheet" href="site-footer.css">
+  <link rel="stylesheet" href="site-page.css">
+  <link rel="stylesheet" href="site-play.css">
+  <link rel="stylesheet" href="NEXUS_USER_GUIDE.css">
+  <script src="site-ui-boot.js"></script>
+  <script src="guide-shots.js" defer></script>
+  <script src="site-look.js" defer></script>
+  <script src="site-behavior.js" defer></script>
+  <script src="site-badges.js" defer></script>
+  <script src="site-guide.js" defer></script>
+</head>
+<body>
+<a class="skip-link no-print" href="#main">Skip to content</a>
+
+<header class="nav no-print">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Nexus Launcher &mdash; home">
+      <svg class="brand-mark" viewBox="0 0 108 108" role="img" aria-label="Nexus Launcher">
+        <g transform="translate(4 6)" fill="rgb(42 46 51)">
+          <path d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+          <path d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+        </g>
+        <path fill="rgb(240 242 245)" d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+        <path fill="rgb(240 242 245)" d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+        <path fill="rgb(143 200 224)" d="M51.5 47.95l3.07 1.77v3.56l-3.07 1.77-3.07-1.77v-3.56z"/>
+      </svg>
+      <span class="brand-word">Nexus</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="setup.html">Setups</a>
+      <a href="NEXUS_USER_GUIDE.html" aria-current="page">User guide</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.systemslate.nexuslauncher">Get the app</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <header class="cover print-only">
+    <p class="cover-brand">NEXUS LAUNCHER</p>
+    <h1>User Guide</h1>
+    <p class="subtitle">Everything your home screen can do, from the first swipe to the last widget.</p>
+    <p class="metadata">
+      Covers Nexus Launcher 1.0.2 · Android 8.0 and later<br>
+      Last updated October 2026
+    </p>
+  </header>
+
+  <section class="page-hero no-print">
+    <div class="wrap">
+      <p class="eyebrow">User guide</p>
+      <h1>Everything your home screen can do.</h1>
+      <p class="lede">From the first swipe to the last widget. Menu names match the app. Chapters that
+        do not have a capture yet show a frame you can fill in later.</p>
+      <ul class="page-meta">
+        <li>Covers version 1.0.2</li>
+        <li>Android 8.0 and later</li>
+        <li>Updated October 2026</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-ghost" href="NEXUS_USER_GUIDE.pdf">Download the PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap doc-layout">
+
+  <nav class="toc" aria-label="Chapters">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#ch1">Getting started</a></li>
+      <li><a href="#ch2">The home screen</a></li>
+      <li><a href="#ch3">Pages and the home layout</a></li>
+      <li><a href="#ch4">Gestures</a></li>
+      <li><a href="#ch5">The app drawer</a></li>
+      <li><a href="#ch6">Folders</a></li>
+      <li><a href="#ch7">The dock</a></li>
+      <li><a href="#ch8">Widgets</a></li>
+      <li><a href="#ch9">Nexus Canvas</a></li>
+      <li><a href="#ch10">Theme and appearance</a></li>
+      <li><a href="#ch11">Icons</a></li>
+      <li><a href="#ch12">Typography and language</a></li>
+      <li><a href="#ch13">Wallpaper and Wallpaper Studio</a></li>
+      <li><a href="#ch14">Immersive Mode</a></li>
+      <li><a href="#ch15">Nexus Island</a></li>
+      <li><a href="#ch16">Notifications and badges</a></li>
+      <li><a href="#ch17">App Lock</a></li>
+      <li><a href="#ch18">Search</a></li>
+      <li><a href="#ch19">News feed and Library</a></li>
+      <li><a href="#ch20">Backup, restore and sharing</a></li>
+      <li><a href="#ch21">Settings map</a></li>
+      <li><a href="#ch22">Privacy, feedback and diagnostics</a></li>
+      <li><a href="#ch23">Troubleshooting</a></li>
+      <li><a href="#ch24">Glossary and setup checklist</a></li>
+    </ol>
+  </nav>
+
+  <div class="prose manual">
+
+  <div class="summary-box no-print">
+    <h2>How to use this manual</h2>
+    <p>Menu names are written exactly as they appear in the app, in quotes, for example
+      <span class="path">Settings &rsaquo; Home Screen &rsaquo; Grid Layout</span>.
+      Every illustration is a real screenshot of the launcher, kept in
+      <code>assets/guide/</code>. A frame marked <em>Screenshot coming</em> fills in by
+      itself as soon as its image file is added to that folder.
+      The manual is print-ready &mdash; use your browser's Print command and choose &ldquo;Save as PDF&rdquo;,
+      or <a href="NEXUS_USER_GUIDE.pdf">download the PDF</a>.</p>
+  </div>
+
+  <!-- ============================== CHAPTER 1 ============================== -->
+  <section class="chapter" id="ch1">
+    <p class="chapter-number">Chapter 1</p>
+    <h2>Getting started</h2>
+
+    <p>Nexus Launcher replaces your phone's home screen. It keeps the things you expect &mdash; a
+      grid of apps, a dock, folders, widgets &mdash; and adds a drawer with three layouts, a
+      customizable status row, an optional live pill called Nexus Island, and a design tool for
+      building your own home screen pieces.</p>
+
+    <h3>First launch</h3>
+    <p>On a new install Nexus shows a short, skippable setup sequence. Every card has
+      <span class="path">Skip</span>, and your place is remembered &mdash; if Android restarts the
+      launcher when you change the default Home app, setup resumes where you left off.</p>
+
+    <ol class="steps">
+      <li><strong>Welcome to Nexus.</strong> Pick how to start:
+        <span class="path">Start fresh</span> (clean defaults),
+        <span class="path">Import from Nova Launcher</span>, or
+        <span class="path">Restore a Nexus backup</span>. The last two finish setup and take you
+        straight to Backup &amp; Restore.</li>
+      <li><strong>Theme.</strong> Light, dark, or follow your phone.</li>
+      <li><strong>UI Style.</strong> How widgets, folders and the dock look. Try each one &mdash;
+        the choice is applied immediately.</li>
+      <li><strong>Wallpaper.</strong> Choose a Nexus-made wallpaper or open Wallpaper Studio.</li>
+      <li><strong>Feed page.</strong> Swipe right on the home screen to reach your news feed. You can
+        turn this off here or later in Home Screen settings.</li>
+      <li><strong>Permissions.</strong> Allow only what you want to use. Each row reads
+        <span class="path">Allow</span> until granted, then <span class="path">✓ Granted</span>.</li>
+      <li><strong>Default Home App.</strong> Tap <span class="path">Set Default</span> so the Home
+        button and home gesture open Nexus.</li>
+    </ol>
+
+    <div class="callout tip">
+      <span class="callout-title">Tip</span>
+      <p>You can skip every step and still change all of it later. Nothing in setup is permanent.</p>
+    </div>
+
+    <h3>What each permission unlocks</h3>
+    <p>Nexus asks for nothing at install time. These are granted individually, and every one can be
+      reviewed later in <span class="path">Settings &rsaquo; Notifications &amp; Permissions &rsaquo;
+      System &amp; Permissions</span>.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Permission</th><th>What it enables</th><th>Without it</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Notification Access</td>
+            <td>Badge counts, the in-launcher notification sheet, the Music widget</td>
+            <td>No badges; the sheet sends you to system settings</td>
+          </tr>
+          <tr>
+            <td>Storage &amp; Media Access</td>
+            <td>Blur behind third-party wallpapers on Android 12 and below</td>
+            <td>Frosted surfaces look flat</td>
+          </tr>
+          <tr>
+            <td>Accessibility Service</td>
+            <td>Global gesture actions such as Lock Screen, and Strict Lock Mode</td>
+            <td>Those specific actions are unavailable</td>
+          </tr>
+          <tr>
+            <td>App Usage Access</td>
+            <td>Recent apps in the drawer and search, and usage rings on star pages</td>
+            <td>Recent apps sections stay empty</td>
+          </tr>
+          <tr>
+            <td>Location Access</td>
+            <td>Weather widget, weather status item, Wi-Fi network name</td>
+            <td>Weather asks for location when opened</td>
+          </tr>
+          <tr>
+            <td>Contacts Access</td>
+            <td>Contact results in search</td>
+            <td>Search returns apps only</td>
+          </tr>
+          <tr>
+            <td>Nearby devices</td>
+            <td>Connected Bluetooth device in Nexus Island and the status row</td>
+            <td>That Island event is skipped</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warning">
+      <span class="callout-title">Android 13 and later</span>
+      <p>Storage &amp; Media is only requested on Android 12 and below. On newer versions Nexus uses
+        the system photo picker, which needs no permission.</p>
+    </div>
+
+    <h3>Setting Nexus as your default launcher</h3>
+    <p>If you skipped the last setup card, open <span class="path">Settings &rsaquo; Home Screen</span>
+      and use the default-launcher banner at the top, or go through Android's own
+      <span class="path">Settings &rsaquo; Apps &rsaquo; Default apps &rsaquo; Home app</span>.</p>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/welcome-card.jpg" width="575" height="1280"
+        alt="The welcome card: start fresh, import from Nova, or restore a Nexus backup.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>welcome-card.jpg</code>
+      </div>
+      <figcaption>The welcome card: start fresh, import from Nova, or restore a Nexus backup.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch1">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 2 ============================== -->
+  <section class="chapter" id="ch2">
+    <p class="chapter-number">Chapter 2</p>
+    <h2>The home screen</h2>
+
+    <p>Everything on the home screen lives on a grid. Apps, folders, shortcuts and widgets all snap
+      to it, and every control that changes the grid is in
+      <span class="path">Settings &rsaquo; Home Screen</span>.</p>
+
+    <h3>Grid Layout</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Range or options</th><th>Default</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Columns</td><td>4&ndash;12</td><td>6</td><td>On a tablet or unfolded foldable this edits the large-screen grid, used in both orientations.</td></tr>
+          <tr><td>Rows</td><td>5&ndash;15</td><td>10</td><td>Same large-screen behavior as Columns.</td></tr>
+          <tr><td>Icon Size</td><td>40&ndash;100%</td><td>65%</td><td>Scales icons inside their cell. Labels are unaffected.</td></tr>
+          <tr><td>App Label</td><td>On / Off</td><td>On</td><td>Turns app names off and on.</td></tr>
+          <tr><td>Two-line labels</td><td>On / Off</td><td>Off</td><td>Wraps long names onto a second line. Dimmed while App Label is off.</td></tr>
+          <tr><td>Page Indicator</td><td>On / Off</td><td>On</td><td>The dots above the dock.</td></tr>
+          <tr><td>Show Dock</td><td>On / Off</td><td>On</td><td>When off, the grid uses the dock's space. Your dock apps are kept.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="callout-title">Columns, Rows and Icon Size are staged</span>
+      <p>These three wait for the <span class="path">Apply</span> bar at the bottom of the page.
+        Everything else on the page takes effect immediately. Leaving the page with pending changes
+        asks whether to discard them.</p>
+    </div>
+
+    <h3>Screen Spacing</h3>
+    <p>Four sliders let you tighten or loosen the layout. Negative values pull the grid past the
+      screen edge or pull rows together; icons shrink to fit rather than overlap.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Range</th><th>Default</th><th>Effect</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Padding Horizontal</td><td>&minus;4 to 64 dp</td><td>0 dp</td><td>Left and right screen margin</td></tr>
+          <tr><td>Padding Vertical</td><td>&minus;32 to 64 dp</td><td>0 dp</td><td>Top and bottom screen margin</td></tr>
+          <tr><td>Gap Horizontal</td><td>0 to 64 dp</td><td>0 dp</td><td>Space between icons in a row</td></tr>
+          <tr><td>Gap Vertical</td><td>0 to 64 dp</td><td>0 dp</td><td>Space between rows</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Transitions</h3>
+    <p>The <span class="path">Page Transition</span> row chooses how one page becomes the next:
+      <span class="path">None</span>, <span class="path">Slide</span> (default),
+      <span class="path">Fade</span>, <span class="path">Cube</span>,
+      <span class="path">Zoom</span>, <span class="path">Flip</span> and
+      <span class="path">Gravity Fold</span>.</p>
+    <ul class="compact">
+      <li><strong>Reduce Motion</strong> &mdash; minimizes launcher animations. Moving transitions
+        become a fade, and bounce and overshoot are removed across the app.</li>
+      <li><strong>Transition Speed</strong> &mdash; 50&ndash;200%, default 100%. Higher values make
+        the animation take longer.</li>
+      <li><strong>Swipe right to access RSS feed</strong> &mdash; shows the news feed on the
+        leftmost screen. On by default.</li>
+    </ul>
+
+    <div class="callout tip">
+      <span class="callout-title">If you prefer stillness</span>
+      <p>Turn on Reduce Motion, then pick <span class="path">Fade</span> or
+        <span class="path">None</span> as the page transition. Cube, Flip, Zoom and Gravity Fold are
+        the most animated options.</p>
+    </div>
+
+    <h3>Adding things to the home screen</h3>
+    <p>There are four ways to put something on the grid:</p>
+    <ol>
+      <li><strong>From the drawer.</strong> Long-press an app and drag it up, or use the drawer's
+        selection bar and choose <span class="path">Pin</span>.</li>
+      <li><strong>Long-press empty space.</strong> The radial menu offers
+        <span class="path">Apps</span>, <span class="path">Widgets</span>,
+        <span class="path">Folder</span> and <span class="path">Shortcut</span>.</li>
+      <li><strong>Widget picker.</strong> Tap a widget to drop it at the centre of the page, or drag
+        it to an exact spot.</li>
+      <li><strong>Widgets from an app's menu.</strong> Long-press an app that provides widgets; a
+        <span class="path">Widgets</span> row appears only when the app actually has some.</li>
+    </ol>
+
+    <h3>Working with icons</h3>
+    <p>Long-press a home-screen icon to open its menu:</p>
+    <ul class="compact">
+      <li><span class="path">Select</span> &mdash; starts multi-select (see below).</li>
+      <li><span class="path">Edit</span> &mdash; rename the app, choose a custom icon, change its
+        shape, and set per-app gestures.</li>
+      <li><span class="path">Lock App</span> / <span class="path">Unlock App</span> &mdash; protects
+        the app with your fingerprint, face or screen lock.</li>
+      <li><span class="path">Resize</span> &mdash; lets the icon span more than one cell. Apps only;
+        not offered in the dock.</li>
+      <li><span class="path">Remove</span> &mdash; takes this copy off the home screen. The app stays
+        installed and stays in the drawer.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-title">Duplicates are independent</span>
+      <p>The same app can appear several times. Removing one copy removes only that copy &mdash;
+        never the others.</p>
+    </div>
+
+    <h3>Multi-select</h3>
+    <p>Choose <span class="path">Select</span> from any icon menu, then tap more icons to add them.
+      A ring appears around each selection and a bar shows how many you have picked, for example
+      <span class="path">"3 selected"</span>.</p>
+    <ul class="compact">
+      <li><strong>Home screen:</strong> <span class="path">Remove</span>,
+        <span class="path">Create Folder</span> (two or more apps), and
+        <span class="path">Uninstall</span> (one app at a time).</li>
+      <li><strong>Drawer:</strong> <span class="path">Pin</span> to place the selection on the home
+        screen, <span class="path">Hide App</span>, and <span class="path">Create Folder</span>.</li>
+      <li>The home screen zooms out slightly while selecting so the bar never covers icons.</li>
+      <li>Only the <strong>X</strong> button leaves selection mode. Tapping empty space does nothing,
+        and the drawer still scrolls normally.</li>
+    </ul>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/icon-menu.jpg" width="575" height="1280"
+        alt="The icon menu: the pressed app stays bright while the rest of the screen dims.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>icon-menu.jpg</code>
+      </div>
+      <figcaption>The icon menu keeps the pressed icon bright while everything else dims.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch2">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 3 ============================== -->
+  <section class="chapter" id="ch3">
+    <p class="chapter-number">Chapter 3</p>
+    <h2>Pages and the home layout</h2>
+
+    <p>You can have as many home pages as you like. Swipe left and right to move between them; the
+      dots above the dock show where you are.</p>
+
+    <h3>Manage Pages</h3>
+    <p>Open it from the radial menu: long-press empty space, then choose
+      <span class="path">Pages</span>. The screen shows a two-column grid of phone-shaped page cards.</p>
+    <ul>
+      <li>The header counts your pages and names the Home one, for example
+        <span class="path">"3 pages · Home is 1"</span>.</li>
+      <li>Each card shows a live thumbnail of that page, including its widgets.</li>
+      <li>The default page carries a <span class="path">Home</span> badge.</li>
+      <li><strong>Set a page as Home</strong> with the home chip on its card. The Home button, the
+        home gesture and closing all apps return to that page.</li>
+      <li><strong>Reorder</strong> by long-pressing a card and dragging it.</li>
+      <li><strong>Delete</strong> with the delete chip. An empty page goes immediately; a page with
+        items asks first and names the count. The last remaining page cannot be deleted.</li>
+      <li><strong>Add a page</strong> with the dashed <span class="path">Add Page</span> card.</li>
+    </ul>
+
+    <div class="callout tip">
+      <span class="callout-title">Pages follow their contents</span>
+      <p>Reordering pages moves each page's own settings with it, and deleting a page cleans up
+        anything that belonged only to that page. Your Home page setting is adjusted automatically
+        so it never points at a page that no longer exists.</p>
+    </div>
+
+    <h3>The radial menu</h3>
+    <p>Long-pressing empty home space opens an eight-slice radial menu at your finger. It tracks your
+      finger without lifting, so you can slide straight onto an option; move far enough away and the
+      menu cancels.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Slice</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Apps</td><td>Pick apps to place on the grid</td></tr>
+          <tr><td>Widgets</td><td>Open the widget picker</td></tr>
+          <tr><td>Wallpaper</td><td>Open the wallpaper sheet</td></tr>
+          <tr><td>Pages</td><td>Open Manage Pages</td></tr>
+          <tr><td>Folder</td><td>Create an empty folder at that spot</td></tr>
+          <tr><td>Shortcut</td><td>Add a shortcut</td></tr>
+          <tr><td>Settings</td><td>Fan out ten shortcuts: Home, Drawer, Dock, Theme, Icons, Typography, Gestures, Search, Notifications, Backup</td></tr>
+          <tr><td>Lock Layout</td><td>Changes the slice label to a locked state</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Moving things around</h3>
+    <ul>
+      <li><strong>Within a page:</strong> long-press and drag. The target cells highlight, and the
+        icon drops into the cell under its centre.</li>
+      <li><strong>Across pages:</strong> hold an icon near the left or right edge of the screen and
+        the launcher turns the page for you.</li>
+      <li><strong>Into the dock:</strong> drag all the way down; the drop only commits when your
+        finger is genuinely over the dock.</li>
+      <li><strong>Onto another icon:</strong> creates a folder from both apps. A red highlight means
+        the drop will be refused.</li>
+      <li><strong>Rotation and grid changes:</strong> icons keep their physical place on screen
+        instead of clustering in a corner. If a smaller grid has no room, items spill to the next
+        free cell or page rather than disappearing.</li>
+    </ul>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/page-cards.jpg" width="575" height="1280"
+        alt="The Manage Pages sheet, showing a live thumbnail of each home page.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>page-cards.jpg</code>
+      </div>
+      <figcaption>Page cards render the real page, so widgets and folders are recognisable at a glance.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch3">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 4 ============================== -->
+  <section class="chapter" id="ch4">
+    <p class="chapter-number">Chapter 4</p>
+    <h2>Gestures</h2>
+
+    <p>Nexus has three kinds of gesture: swipes on empty home space, swipes on an individual icon or
+      folder, and swipes inside the drawer. All of them are configurable.</p>
+
+    <h3>Home screen swipes</h3>
+    <p>Find these in <span class="path">Settings &rsaquo; Gestures</span>.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Gesture</th><th>Default action</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Swipe Up</td><td>Open App Drawer</td><td>Only starts on empty home space with the drawer closed</td></tr>
+          <tr><td>Swipe Down</td><td>Open Search</td><td>Same</td></tr>
+          <tr><td>Two-Finger Swipe Up</td><td>None</td><td>Optional</td></tr>
+          <tr><td>Two-Finger Swipe Down</td><td>None</td><td>Optional</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Actions you can assign</h3>
+    <p>The action picker groups its options as <span class="path">Navigation</span>,
+      <span class="path">System</span>, <span class="path">Launcher</span> and
+      <span class="path">Shortcuts</span>.</p>
+
+    <div class="two-column">
+      <ul class="compact">
+        <li>None</li>
+        <li>Open App Info</li>
+        <li>Lock Screen</li>
+        <li>Toggle Flashlight</li>
+        <li>Open App Drawer</li>
+        <li>Open Specific App</li>
+        <li>Open Specific Page</li>
+        <li>Open Specific Folder</li>
+        <li>Open Specific Shortcut</li>
+        <li>Expand Notifications</li>
+      </ul>
+      <ul class="compact">
+        <li>Open Quick Settings</li>
+        <li>Show Recents</li>
+        <li>Take Screenshot</li>
+        <li>Show Power Menu</li>
+        <li>Open Search</li>
+        <li>Next Page</li>
+        <li>Previous Page</li>
+        <li>Toggle Labels</li>
+        <li>Home Edit Mode</li>
+        <li>Split Screen</li>
+      </ul>
+    </div>
+
+    <div class="callout warning">
+      <span class="callout-title">Lock Screen needs Accessibility</span>
+      <p>The picker marks it "Requires accessibility". Enable the service in
+        <span class="path">Settings &rsaquo; Notifications &amp; Permissions</span> first, or the action
+        will not fire.</p>
+    </div>
+
+    <h3>Gestures on a single app or folder</h3>
+    <p>Long-press an icon &rarr; <span class="path">Edit</span>. The
+      <span class="path">Gestures</span> section offers <span class="path">Swipe Up</span>,
+      <span class="path">Swipe Down</span> and <span class="path">Double Tap</span>. This is how you
+      launch one particular app or shortcut without opening the app first &mdash; for example
+      swipe up on your camera icon to open the gallery.</p>
+
+    <h3>Drawer and page swipes</h3>
+    <ul>
+      <li><strong>Swipe up</strong> on the home screen opens the drawer; <strong>swipe down</strong>
+        inside the drawer closes it. A fast flick completes the motion, and the midpoint decides
+        when you let go slowly.</li>
+      <li><strong>Swipe left or right</strong> to change home pages. The page follows your finger.</li>
+      <li><strong>Swipe right from the first page</strong> opens the news feed, if it is enabled.</li>
+      <li><strong>Swiping over a widget</strong> still pages the home screen; a scrollable list inside
+        a widget scrolls first, and pages the home screen once it reaches its end.</li>
+    </ul>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/gestures.jpg" width="575" height="1280"
+        alt="The Gestures settings page, each row showing the action currently assigned to it.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>gestures.jpg</code>
+      </div>
+      <figcaption>Each row's subtitle repeats the action currently assigned to it.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch4">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 5 ============================== -->
+  <section class="chapter" id="ch5">
+    <p class="chapter-number">Chapter 5</p>
+    <h2>The app drawer</h2>
+
+    <p>Swipe up on the home screen. The drawer has three completely different modes, and each one
+      has its own layout controls.</p>
+
+    <h3>Choosing a drawer mode</h3>
+    <p>Go to <span class="path">Settings &rsaquo; App Drawer &rsaquo; Layout</span>, or open the
+      drawer's overflow menu (the three lines beside the search pill) and use its
+      <span class="path">Layout</span> row.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Mode</th><th>What it looks like</th><th>Extra layout option</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Grid</td>
+            <td>Classic columns of icons with labels</td>
+            <td>2&ndash;10 columns</td>
+          </tr>
+          <tr>
+            <td>List</td>
+            <td>One or two wide columns; can group apps under letter headings</td>
+            <td>1&ndash;2 columns (up to 4 on a large screen)</td>
+          </tr>
+          <tr>
+            <td>Categories</td>
+            <td>Apps organised into category cards</td>
+            <td><span class="path">Spatial</span>, <span class="path">Strip</span> or <span class="path">List</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Category layouts.</strong> <span class="path">Spatial</span> shows a hero card with
+      peeking side cards. <span class="path">Strip</span> is a horizontal row of category cards with
+      a <span class="path">See all</span> link on each. <span class="path">List</span> stacks
+      categories with a letter rail like the Grid mode.</p>
+
+    <h3>Layout settings</h3>
+    <ul class="compact">
+      <li><strong>Columns</strong> &mdash; as above. Dimmed in Categories mode.</li>
+      <li><strong>Group by letter</strong> &mdash; only in List mode with A&ndash;Z sorting. Adds
+        letter headings between apps.</li>
+      <li><strong>Icon Size</strong> &mdash; 40&ndash;85%, default 65%.</li>
+      <li><strong>App Label</strong> and <strong>Two-line labels</strong> &mdash; the drawer has its
+        own label settings, independent of the home screen.</li>
+      <li><strong>Sort Order</strong> &mdash; <span class="path">A&ndash;Z</span>,
+        <span class="path">Z&ndash;A</span> or <span class="path">Recently Installed</span>.
+        The A&ndash;Z rail hides itself for non-alphabetical sorts.</li>
+      <li><strong>Transition</strong> &mdash; <span class="path">Default</span>,
+        <span class="path">3D Cube</span>, <span class="path">Zoom</span>,
+        <span class="path">Tilt</span> or <span class="path">Card Stack</span>.</li>
+    </ul>
+
+    <h3>Search and navigation</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Setting</th><th>Options</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>Search Pill</td><td>On / Off</td><td>On</td></tr>
+          <tr><td>Search Pill Position</td><td>Top / Bottom</td><td>Top</td></tr>
+          <tr><td>Categories</td><td>On / Off</td><td>On</td></tr>
+          <tr><td>Category Style</td><td>In Pill / Dropdown / Strip</td><td>In Pill</td></tr>
+          <tr><td>Category Bar Position</td><td>Top / Bottom</td><td>Top</td></tr>
+          <tr><td>Side Rail</td><td>On / Off</td><td>On</td></tr>
+          <tr><td>Show recent apps</td><td>On / Off</td><td>Follows drawer mode</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Getting around the drawer</h3>
+    <ul>
+      <li><strong>A&ndash;Z rail.</strong> Drag along the right edge and the drawer scrubs through
+        the alphabet, with a bubble showing the current letter and a tick for each one. Letters with
+        no apps are dimmed.</li>
+      <li><strong>Category bar.</strong> Tap a chip to filter. The chip menu also offers
+        <span class="path">New category</span>, <span class="path">Edit categories</span> and
+        <span class="path">Sort apps</span>; inside edit mode, tapping an icon or name changes it, and
+        <span class="path">Restore default categories</span> undoes your edits.</li>
+      <li><strong>Recent apps.</strong> A section at the top of the drawer showing what you used
+        lately. It needs App Usage Access; without it the drawer offers
+        <span class="path">Tap to enable Recent Apps</span>.</li>
+      <li><strong>Overflow menu.</strong> Hidden Apps, Create Folder, Drawer Settings, plus inline
+        rows for Layout, Columns, Style, Sort Order, Group by letter, Recent apps and the bar
+        position.</li>
+    </ul>
+
+    <h3>Hiding apps</h3>
+    <p>Long-press an app in the drawer and choose <span class="path">Hide App</span>, or select
+      several and use the selection bar. Hidden apps are listed in
+      <span class="path">Settings &rsaquo; App Drawer &rsaquo; Hidden Apps</span>, where each one has
+      an <span class="path">Unhide</span> button.</p>
+
+    <div class="callout">
+      <span class="callout-title">Hiding is not locking</span>
+      <p>A hidden app is out of sight, not protected. To require authentication before an app opens,
+        use <a href="#ch17">App Lock</a>.</p>
+    </div>
+
+    <h3>Drawer folders</h3>
+    <p>Create one from the overflow menu (<span class="path">Create Folder</span>, titled
+      <span class="path">New Folder</span>) or by selecting two or more apps and choosing
+      <span class="path">Create Folder</span>. Drawer folders appear at the top of the drawer and open
+      the same way home folders do.</p>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/app-drawer-grid.jpg" width="575" height="1280"
+        alt="The app drawer in Grid mode, with labeled icons and an A to Z rail.">
+      <button type="button" class="shot-enlarge" data-enlarge>Enlarge</button>
+      <figcaption>Grid mode: columns of icons, labels, and the A&ndash;Z rail.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/app-drawer-list.jpg" width="575" height="1280"
+        alt="The app drawer in List mode, with letter headings and two columns.">
+      <button type="button" class="shot-enlarge" data-enlarge>Enlarge</button>
+      <figcaption>List mode: wide rows, letter headings, and the same rail.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/app-drawer-categories.jpg" width="575" height="1280"
+        alt="The app drawer in Categories mode, Spatial layout, with Media selected.">
+      <button type="button" class="shot-enlarge" data-enlarge>Enlarge</button>
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>app-drawer-categories.jpg</code>
+      </div>
+      <figcaption>Categories mode, Spatial layout: the Media card, quick actions, and the category rail.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch5">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 6 ============================== -->
+  <section class="chapter" id="ch6">
+    <p class="chapter-number">Chapter 6</p>
+    <h2>Folders</h2>
+
+    <p>Folders work on the home screen, in the dock and in the drawer. Opening one shows a floating
+      card anchored to the folder icon rather than a full screen, so you never lose sight of where you
+      came from.</p>
+
+    <h3>Creating and filling a folder</h3>
+    <ul>
+      <li><strong>Merge two apps:</strong> drag one icon onto another.</li>
+      <li><strong>Merge a selection:</strong> multi-select two or more apps, then
+        <span class="path">Create Folder</span>.</li>
+      <li><strong>Start empty:</strong> radial menu &rarr; <span class="path">Folder</span>.</li>
+      <li><strong>Add apps later:</strong> drag an app onto the folder icon, or open the folder and
+        use its <span class="path">Add</span> button.</li>
+    </ul>
+
+    <div class="callout warning">
+      <span class="callout-title">No duplicates inside a folder</span>
+      <p>Dropping an app into a folder that already contains it is refused, with an explanation. This
+        keeps folders predictable when you are reorganising in a hurry.</p>
+    </div>
+
+    <h3>Inside an open folder</h3>
+    <ul>
+      <li><strong>Tap</strong> an app to launch it.</li>
+      <li><strong>Long-press</strong> an app for <span class="path">Remove from Folder</span>, its
+        shortcuts, <span class="path">App Info</span> and <span class="path">Uninstall</span>.</li>
+      <li><strong>Reorder:</strong> long-press an icon and drag; the surrounding icons slide aside to
+        show where it will land.</li>
+      <li><strong>Sort:</strong> tap the <span class="path">Sort</span> button to arrange the folder
+        alphabetically. The new order is saved immediately.</li>
+      <li><strong>Drag out:</strong> pull an icon past the edge of the folder card and it is handed
+        to the home screen, where you can drop it anywhere.</li>
+      <li><strong>Close:</strong> tap outside the card, or press Back.</li>
+    </ul>
+
+    <h3>Editing a folder</h3>
+    <p>Open the folder and tap <span class="path">Edit</span>. The sheet groups its controls into
+      <span class="path">Appearance</span>, <span class="path">Layout</span> and
+      <span class="path">Gestures</span>.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Section</th><th>Controls</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>The folder name, edited inline</td>
+          </tr>
+          <tr>
+            <td>Preview Style</td>
+            <td><span class="path">Grid</span>, <span class="path">Fan of 3</span>,
+              <span class="path">Hero + Orbit</span>, <span class="path">Custom Icon</span>,
+              <span class="path">Bento</span> &mdash; how the closed folder icon looks</td>
+          </tr>
+          <tr>
+            <td>Appearance</td>
+            <td>Window and icon opacity, glass refraction, expressive gradient</td>
+          </tr>
+          <tr>
+            <td>Layout</td>
+            <td>Columns inside the open folder, and <span class="path">Show App Labels</span></td>
+          </tr>
+          <tr>
+            <td>Gestures</td>
+            <td>Swipe Up, Swipe Down and Double Tap on the folder icon</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-title">Two opacities, on purpose</span>
+      <p><span class="path">Icon Opacity</span> affects the closed folder icon on the home screen.
+        <span class="path">Window Opacity</span> affects the card you see when the folder is open.
+        They are independent, so a subtle icon can still open into a solid card.</p>
+    </div>
+
+    <h3>Folder settings that travel</h3>
+    <ul>
+      <li>If you drag a folder into the dock, its appearance and contents come with it.</li>
+      <li>Deleting a folder deletes the folder and its contents together; you are asked first and
+        told how many apps are inside.</li>
+      <li>Backups include folder covers and the apps inside, and restore them in the correct order.</li>
+    </ul>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/folder-open.jpg" width="575" height="1280"
+        alt="An open folder on the home screen, with Edit, Sort and Add in its header.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>folder-open.jpg</code>
+      </div>
+      <figcaption>An open folder: the card is anchored to its icon, and the header holds Edit, Sort and Add.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch6">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 7 ============================== -->
+  <section class="chapter" id="ch7">
+    <p class="chapter-number">Chapter 7</p>
+    <h2>The dock</h2>
+
+    <p>The dock is the strip of apps at the bottom of the home screen. It holds apps and folders, and
+      it scrolls when you put more items in it than the maximum you have set.</p>
+
+    <h3>Opening Dock Settings</h3>
+    <p>Three routes, all leading to the same sheet:</p>
+    <ul class="compact">
+      <li><span class="path">Settings &rsaquo; Dock</span></li>
+      <li>Long-press an empty part of the dock</li>
+      <li>Long-press a dock icon and choose <span class="path">Dock Settings</span></li>
+    </ul>
+
+    <h3>Layout &amp; sizing</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Setting</th><th>Range</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>Max Icons</td><td>1&ndash;10</td><td>4</td></tr>
+          <tr><td>Icon Size</td><td>32&ndash;72 dp</td><td>48 dp</td></tr>
+          <tr><td>Height</td><td>60&ndash;120 dp</td><td>90 dp</td></tr>
+          <tr><td>Corner Radius</td><td>0&ndash;40 dp</td><td>20 dp</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Background</h3>
+    <ul>
+      <li><strong>Background swatches</strong> &mdash; none, fifteen gradients, or a solid colour.</li>
+      <li><strong>Opacity</strong> &mdash; 0&ndash;100%, default 80%. In Liquid Glass this row is
+        labelled <span class="path">Liquid clarity</span>.</li>
+      <li><strong>Glass Refraction</strong> &mdash; 0&ndash;100%, default 70%. Labelled
+        <span class="path">Refraction amount</span> in Liquid Glass.</li>
+      <li><strong>Liquid Glass extras</strong> &mdash; <span class="path">Liquid blur</span>,
+        <span class="path">Refraction height</span> (8&ndash;48 dp) and
+        <span class="path">Chromatic aberration</span>.</li>
+      <li><strong>Expressive Gradient</strong> &mdash; turns a frosted gradient background on or off.</li>
+    </ul>
+
+    <h3>Labels &amp; search</h3>
+    <ul class="compact">
+      <li><span class="path">Show Labels</span> &mdash; off by default.</li>
+      <li><span class="path">Font Size</span> &mdash; 8&ndash;16 sp, only visible when labels are on.</li>
+      <li><span class="path">Show Search</span> &mdash; adds a search control to the dock.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-title">Saving your dock</span>
+      <p>Dock Settings uses <span class="path">Reset</span> and <span class="path">Apply</span>. Closing
+        with unsaved changes asks before discarding, and Reset offers to restore the default dock apps
+        as well as the default appearance.</p>
+    </div>
+
+    <h3>Using the dock</h3>
+    <ul>
+      <li>Tap an app to launch it; tap a folder to open it.</li>
+      <li>Long-press an app for <span class="path">Edit</span>,
+        <span class="path">Lock App</span>, <span class="path">Remove</span> and
+        <span class="path">Dock Settings</span>. Dock menus do not offer Resize or Select.</li>
+      <li>If the dock holds more items than <span class="path">Max Icons</span>, swipe sideways inside
+        it to reach the rest; a small indicator shows the dock's pages.</li>
+      <li>In landscape the dock becomes a strip along one side, and the grid makes room for it.</li>
+    </ul>
+
+    <div class="callout tip">
+      <span class="callout-title">Need more grid room?</span>
+      <p>Turn off <span class="path">Show Dock</span> in Home Screen settings and the grid expands into
+        that space. Your dock apps are kept, so turning it back on restores them.</p>
+    </div>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/dock-settings.jpg" width="575" height="1280"
+        alt="Dock Settings, showing the live preview above the dock controls.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>dock-settings.jpg</code>
+      </div>
+      <figcaption>Dock Settings with its live preview; edits are staged until you Apply.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch7">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 8 ============================== -->
+  <section class="chapter" id="ch8">
+    <p class="chapter-number">Chapter 8</p>
+    <h2>Widgets</h2>
+
+    <p>Nexus hosts Android widgets like any launcher, and adds its own set that are drawn to match the
+      theme. The picker has two tabs: <span class="path">Nexus</span> for the built-in widgets and
+      <span class="path">All</span> for everything installed on your phone.</p>
+
+    <h3>Placing a widget</h3>
+    <ol class="steps">
+      <li>Long-press empty home space and choose <span class="path">Widgets</span>.</li>
+      <li>Search with <span class="path">Search widgets…</span>, or browse a tab.</li>
+      <li>Tap a widget to drop it in the middle of the page, or long-press and drag it to the exact
+        spot you want.</li>
+    </ol>
+
+    <div class="callout">
+      <span class="callout-title">Limits</span>
+      <p>A page has a maximum number of widgets and will say so. Invalid drops are refused with
+        <span class="path">Drop not allowed</span> rather than placed somewhere unexpected.</p>
+    </div>
+
+    <h3>Nexus widgets</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Widget</th><th>Size</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Living Mosaic</td><td>3&times;3</td><td>A container of several widgets with pages and a focus mode</td></tr>
+          <tr><td>Shortcut Box</td><td>2&times;2</td><td>A grid of shortcut buttons, including Nexus actions</td></tr>
+          <tr><td>App Box</td><td>2&times;2</td><td>A tidy grid of apps inside a card</td></tr>
+          <tr><td>Recent apps</td><td>3&times;3</td><td>Your most recently used apps, newest first</td></tr>
+          <tr><td>Music</td><td>100&times;80 dp</td><td>Playback controls and the current track</td></tr>
+          <tr><td>Weather</td><td>100&times;80 dp</td><td>Current conditions and forecast</td></tr>
+          <tr><td>Calendar</td><td>100&times;80 dp</td><td>Month grid and week strip</td></tr>
+          <tr><td>Clock</td><td>100&times;80 dp</td><td>Time, date and temperature</td></tr>
+          <tr><td>Glance</td><td>180&times;90 dp</td><td>Clock, date and weather in one block</td></tr>
+          <tr><td>Agenda</td><td>140&times;110 dp</td><td>Your next events as a schedule</td></tr>
+          <tr><td>Notes</td><td>140&times;110 dp</td><td>A scratchpad with urgency, status and progress</td></tr>
+          <tr><td>Battery</td><td>100&times;80 dp</td><td>Charge level and power details</td></tr>
+          <tr><td>Device Performance</td><td>180&times;110 dp</td><td>CPU, memory, storage and temperature</td></tr>
+          <tr><td>Search</td><td>350&times;56 dp</td><td>A search bar; resizes horizontally only</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="small muted">The Progress Bar widget is present in the app but withheld from the picker
+      in this release, so you will not see it.</p>
+
+    <h3>Moving, resizing and replacing</h3>
+    <p>Long-press a placed widget for its menu:</p>
+    <ul class="compact">
+      <li><span class="path">Move</span> &mdash; drag it, or use the arrow pills for precise nudges.</li>
+      <li><span class="path">Resize</span> &mdash; eight handles, with snapping and a tick at each cell
+        boundary. You can also nudge one edge at a time.</li>
+      <li><span class="path">Elevation</span> &mdash; controls which widget sits in front when two
+        overlap. Shown as <span class="path">Z: 2</span>.</li>
+      <li><span class="path">Replace</span> &mdash; pick a different widget; the old one is only
+        removed once the new one is placed.</li>
+      <li><span class="path">Padding</span> &mdash; hosted widgets only. Adds breathing room inside
+        the card.</li>
+      <li><span class="path">Settings</span> &mdash; the widget's own options.</li>
+      <li><span class="path">Remove</span>.</li>
+    </ul>
+
+    <div class="callout tip">
+      <span class="callout-title">Keep your bearings while editing</span>
+      <p>Long-pressing a widget does not blur the workspace. Neighbouring widgets, folders and icons
+        stay sharp so you can size one against the others; only the menu panel itself is frosted.</p>
+    </div>
+
+    <h3>Widget appearance</h3>
+    <p>Most Nexus widgets share two options in their settings sheet:</p>
+    <ul class="compact">
+      <li><strong>Widget Theme</strong> &mdash; <span class="path">Follow</span> the launcher theme,
+        or pin <span class="path">Light</span> / <span class="path">Dark</span> for that one widget.</li>
+      <li><strong>Widget UI</strong> &mdash; <span class="path">Soft UI</span>,
+        <span class="path">Glass</span> or <span class="path">Solid</span>.</li>
+    </ul>
+
+    <h3>Living Mosaic</h3>
+    <p>A Mosaic is a small window onto several widgets at once. Add one, then drag widgets into it or
+      use <span class="path">Add Widget</span> from its menu.</p>
+    <ul>
+      <li><strong>Pages.</strong> A Mosaic can hold multiple pages of widgets; swipe to change page.</li>
+      <li><strong>Mosaic mode</strong> shows the whole page and reflows as you swipe.
+        <strong>Focus mode</strong> shows one widget at a time in a fixed-size carousel.</li>
+      <li><strong>Mosaic Studio</strong> (from <span class="path">Settings</span> in the Mosaic menu)
+        offers Opacity, Glass Refraction, Mosaic Shape (Squircle or Square), Expressive Mode, eight
+        layout templates, page add/remove, and the default mode.</li>
+      <li><strong>Scrollable children still scroll.</strong> Swiping on a list inside a Mosaic scrolls
+        the list first; once it reaches the end, the swipe changes Mosaic page.</li>
+      <li>A Mosaic holds up to twelve widgets per page.</li>
+    </ul>
+
+    <h3>Shortcut Box, App Box and Recent apps</h3>
+    <ul>
+      <li><strong>Shortcut Box</strong> &mdash; tap an empty well to choose a shortcut. Eight Nexus
+        shortcuts are built in: App drawer, Bluetooth, Flashlight, Dark theme, Do Not Disturb, Wi-Fi,
+        Volume panel and System settings. Long-press a filled slot to change or remove it.</li>
+      <li><strong>App Box</strong> &mdash; tap an empty well to choose an app; labels can be turned on
+        or off.</li>
+      <li><strong>Recent apps</strong> &mdash; fills itself from App Usage Access. Apps you uninstall
+        drop out on their own.</li>
+      <li>All three share the same sizing options: icon spacing
+        (<span class="path">Tight</span>, <span class="path">Normal</span>,
+        <span class="path">Wide</span>) and a widget theme.</li>
+    </ul>
+
+    <h3>Widget permissions</h3>
+    <p>A few widgets need data you must allow first. Weather asks for location; Calendar and Agenda
+      ask for calendar access; Music needs Notification Access to read the current track. Each widget
+      shows a clear prompt instead of failing silently.</p>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/widget-picker.jpg" width="575" height="1280"
+        alt="The widget picker's Nexus tab, listing the built-in widgets.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>widget-picker.jpg</code>
+      </div>
+      <figcaption>The picker's Nexus tab; tap to place at the centre, or drag to position precisely.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch8">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 9 ============================== -->
+  <section class="chapter" id="ch9">
+    <p class="chapter-number">Chapter 9</p>
+    <h2>Nexus Canvas</h2>
+
+    <p>Canvas is a design board you place on a home page like a widget. Instead of arranging icons in
+      cells, you compose a rectangle out of pieces &mdash; large type, a clock, the weather, a music
+      player, app strips, folders, photos, shapes and stickers &mdash; and position each piece exactly
+      where you want it.</p>
+
+    <div class="callout">
+      <span class="callout-title">Where it lives</span>
+      <p><span class="path">Settings &rsaquo; Canvas</span>. Saved designs appear in the Canvas Library;
+        <span class="path">+</span> creates a new one.</p>
+    </div>
+
+    <h3>Creating a design</h3>
+    <ol class="steps">
+      <li>Tap <span class="path">+</span> in the Canvas Library.</li>
+      <li>Choose a footprint: <span class="path">Edge to Edge</span> (the whole screen, with guides for
+        the cutout and dock) or <span class="path">Custom Grid</span> (a rectangle inside the normal
+        workspace, minimum 3&times;3 cells, up to your current grid size).</li>
+      <li>Tap <span class="path">Create Canvas</span>. The new design is called
+        <span class="path">Untitled Canvas</span> until you rename it.</li>
+    </ol>
+
+    <h3>Canvas Studio</h3>
+    <p>The editing screen has four actions along the top:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Action</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Layers</td><td>Reorder or delete layers; tap a layer for its own actions</td></tr>
+          <tr><td>Style</td><td>Theme, UI style, glass tuning, icon pack, labels and tile spacing</td></tr>
+          <tr><td>Save</td><td>Saves the design without placing it</td></tr>
+          <tr><td>Apply</td><td>Saves and places the design on the home screen</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><span class="path">Undo</span> and <span class="path">Redo</span> sit at the bottom left. Tap the
+      title to rename the design.</p>
+
+    <h3>What you can add</h3>
+    <p>The add menu holds ten entries:</p>
+    <ul class="compact">
+      <li><span class="path">Templates</span></li>
+      <li><span class="path">Add Component</span></li>
+      <li><span class="path">Add App</span></li>
+      <li><span class="path">Add Icon Strip</span></li>
+      <li><span class="path">Add Folder</span></li>
+      <li><span class="path">Add Shortcut</span></li>
+      <li><span class="path">Shortcut strip</span></li>
+      <li><span class="path">Image</span></li>
+      <li><span class="path">Add Widget</span></li>
+      <li><span class="path">Background</span></li>
+    </ul>
+
+    <p><strong>Studio Components</strong> are grouped by category: All, Shapes, Clocks, Weather, Music,
+      Battery, Dialer, Keyboard, Stickers, Text and Icons. Some are interactive rather than decorative
+      &mdash; the dialers and keyboards are working keypads, and there is a working calculator.</p>
+
+    <p>Text objects can use live values, so a heading can show the time, date, day, battery level,
+      weather or city, and update on its own. They also support size, weight, alignment, letter
+      spacing, colour, rotation and curved shapes such as an arch or a wave.</p>
+
+    <h3>Templates</h3>
+    <p>Templates give you a finished starting point instead of a blank board. They are grouped as
+      Minimal, Neumorphic, Windows and Additional, and include pieces such as
+      <span class="path">Minimal Mono</span>, <span class="path">Glass Fog</span>,
+      <span class="path">Neumorphic Cream</span>, <span class="path">Retro Windows</span>,
+      <span class="path">Windows 98 Taskbar</span> and <span class="path">Pocket Calculator</span>.</p>
+
+    <h3>Background</h3>
+    <ul class="compact">
+      <li><span class="path">Solid Color</span> &mdash; a swatch and an opacity, with Reset.</li>
+      <li><span class="path">Nexus Wallpaper</span> &mdash; the same nine built-in presets as the
+        wallpaper sheet.</li>
+      <li><span class="path">Gallery Image</span> &mdash; your own photo, fitted with Fill or Show whole
+        image, and a position slider.</li>
+      <li>In glass styles the Canvas is see-through, so a colour tints the glass rather than covering
+        it.</li>
+    </ul>
+
+    <h3>Placing and editing a Canvas</h3>
+    <ul>
+      <li><span class="path">Apply</span> places the design and confirms with
+        <span class="path">"Canvas applied to Home Screen."</span></li>
+      <li>If the page is full, Nexus offers to create a new page and place it there; the design is
+        saved either way.</li>
+      <li>To change a placed Canvas, long-press it and choose
+        <span class="path">Canvas Settings</span>.</li>
+      <li>Long-press a Canvas card in the library for
+        <span class="path">Duplicate</span>, <span class="path">Rename</span> and
+        <span class="path">Delete</span>.</li>
+    </ul>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/canvas-studio.jpg" width="575" height="1280"
+        alt="Canvas Studio, with the Layers, Style, Save and Apply controls across the top.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>canvas-studio.jpg</code>
+      </div>
+      <figcaption>Canvas Studio: Layers, Style, Save and Apply across the top; undo and redo at the bottom.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch9">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 10 ============================== -->
+  <section class="chapter" id="ch10">
+    <p class="chapter-number">Chapter 10</p>
+    <h2>Theme and appearance</h2>
+
+    <p><span class="path">Settings &rsaquo; Theme</span> holds five cards: Theme, UI Style, Background,
+      Accent Color and Color Accessibility. Everything here applies immediately &mdash; there is no
+      Apply button on this page.</p>
+
+    <h3>Theme mode</h3>
+    <p>Five options in one row:</p>
+    <ul class="compact">
+      <li><strong>Automatic</strong> &mdash; follows your phone's light or dark setting.</li>
+      <li><strong>Light</strong> and <strong>Dark</strong> &mdash; fixed.</li>
+      <li><strong>AMOLED</strong> &mdash; true black backgrounds, for OLED screens.</li>
+      <li><strong>Calm</strong> &mdash; a low-stimulus mode with its own palettes.</li>
+    </ul>
+
+    <p>When Calm is selected, a <span class="path">Calm Palette</span> row appears with sixteen choices:
+      Rich Sand, Golden Sand, Ocean Blue (default), Navy Ink, Deep Navy, Ember Red, Forest Green,
+      Amber Dusk, Burnt Orange, Deep Plum, Slate Grey, Aurora, Dusk Rose, Tidepool, Copper Night and
+      Sunset Ink.</p>
+
+    <h3>UI Style</h3>
+    <p>Four styles change how surfaces are drawn across the launcher:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Style</th><th>Look</th></tr></thead>
+        <tbody>
+          <tr><td>Default</td><td>Flat, solid surfaces</td></tr>
+          <tr><td>Frosted Glass</td><td>Blurred acrylic that samples your wallpaper</td></tr>
+          <tr><td>Neumorphism</td><td>Soft raised plates with real shadows</td></tr>
+          <tr><td>Liquid Glass</td><td>Refraction and light-bending glass on widgets, folders and the dock</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Liquid Glass adds three controls of its own:</p>
+    <ul class="compact">
+      <li><span class="path">Theme color tint</span> &mdash; gives widgets, folders and the dock a light
+        touch of your theme colour.</li>
+      <li><span class="path">Tint strength</span> &mdash; 25&ndash;200%, default 100%. Hidden while the
+        tint is off.</li>
+      <li>A scope note explaining that Liquid Glass applies to widgets, folders and the dock, while
+        pages, sheets and search stay frosted.</li>
+    </ul>
+
+    <div class="callout warning">
+      <span class="callout-title">Frost needs a wallpaper capture</span>
+      <p>If you set your wallpaper from outside Nexus &mdash; another app, or a live wallpaper &mdash;
+        the glass styles need one capture of it before they can blur it. Use
+        <span class="path">Capture wallpaper for frost/liquid glass</span> on the Theme page, or the same
+        row in the wallpaper sheet's System tab. Until then, frosted surfaces look flat.</p>
+    </div>
+
+    <h3>Background</h3>
+    <ul class="compact">
+      <li><span class="path">Background Layer</span> &mdash; <span class="path">Wallpaper</span> or
+        <span class="path">Theme Color</span>. Theme Color replaces the wallpaper with a flat theme
+        colour everywhere, including behind frost.</li>
+      <li><span class="path">Theme-responsive wallpaper</span> &mdash; adapts Nexus-made wallpaper
+        colours to the active theme and UI style. It works only with wallpapers applied through Nexus
+        Studio, and the app says so when you turn it on.</li>
+    </ul>
+
+    <h3>Accent Color</h3>
+    <ul>
+      <li><span class="path">Use accent color</span> &mdash; on by default. Turning it off hides the
+        swatches and leaves controls neutral.</li>
+      <li><span class="path">Accent in icon badges</span> &mdash; off by default. Tints settings and
+        status-row icon badges with the accent.</li>
+      <li>Eight presets &mdash; Harbor (default), Mist, Sage, Clay, Sand, Rose, Lilac and Slate &mdash;
+        plus a custom swatch that opens a full colour picker. A custom colour is labelled
+        <span class="path">Custom · #RRGGBB</span>.</li>
+    </ul>
+
+    <h3>Color Accessibility <span class="small muted">(Beta)</span></h3>
+    <p>Three options: <span class="path">Off</span>, <span class="path">Red-Green</span> and
+      <span class="path">Blue-Yellow</span>. This adjusts accents for colour vision deficiencies; it
+      changes accent colours only, not the whole palette.</p>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/theme-settings.jpg" width="575" height="1280"
+        alt="Theme settings: appearance modes, colour palette, UI style, background and accent colour.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>theme-settings.jpg</code>
+      </div>
+      <figcaption>Theme settings: mode, palette, UI style, background and accent in one scroll.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch10">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 11 ============================== -->
+  <section class="chapter" id="ch11">
+    <p class="chapter-number">Chapter 11</p>
+    <h2>Icons</h2>
+
+    <p><span class="path">Settings &rsaquo; Icons</span> controls icon size, shape and pack for the whole
+      launcher, with a live preview at the top of the page.</p>
+
+    <h3>Icon size</h3>
+    <p><span class="path">Icon Size</span> sets one global size from 32 to 72 dp, default 48 dp, used by
+      the home screen, drawer, dock and folders. Any surface that has its own size set keeps that
+      instead.</p>
+
+    <h3>Shape</h3>
+    <p>Fourteen shapes are available:</p>
+    <div class="two-column">
+      <ul class="compact">
+        <li>System</li>
+        <li>Circle</li>
+        <li>Squircle</li>
+        <li>Rounded</li>
+        <li>Square</li>
+        <li>Pill</li>
+        <li>Hex</li>
+      </ul>
+      <ul class="compact">
+        <li>Soft Hex</li>
+        <li>Octagon</li>
+        <li>Diamond</li>
+        <li>Pebble</li>
+        <li>Teardrop</li>
+        <li>Leaf</li>
+        <li>Badge</li>
+      </ul>
+    </div>
+    <p><span class="path">System</span> keeps each app's own mask, so different apps can look different.</p>
+
+    <h3>Icon pack</h3>
+    <ul>
+      <li>The first tile is always <span class="path">System Default</span>, followed by every icon pack
+        installed on your phone.</li>
+      <li>Selecting a pack applies it immediately to the home screen, drawer and dock.</li>
+      <li>If you had changed some icons one by one, Nexus asks
+        <span class="path">"Use the new icon pack everywhere?"</span> &mdash; choose
+        <span class="path">Keep them</span> to preserve those individual icons, or
+        <span class="path">Switch them</span> to bring them into the pack. Icons made from your own
+        photos always stay as they are.</li>
+      <li>There is no in-app store: Nexus uses packs you have installed from elsewhere.</li>
+    </ul>
+
+    <h3>Themed Icons <span class="small muted">(Beta)</span></h3>
+    <p><span class="path">Themed Icons</span> tints icons to match your theme colours. It and a
+      third-party icon pack are mutually exclusive: turning Themed Icons on returns the pack to System
+      Default, and choosing a pack turns Themed Icons off. Nexus tells you which happened.</p>
+
+    <h3>Changing a single app</h3>
+    <ol class="steps">
+      <li>Long-press the app and choose <span class="path">Edit</span>.</li>
+      <li>Tap the name to rename it, or pick a new icon from
+        <span class="path">Gallery</span> or <span class="path">Icon packs</span>.</li>
+      <li>In the shape carousel, <span class="path">Global</span> means "follow the Theme shape"; any
+        other tile overrides the shape for this app only.</li>
+      <li>Apply, or use Reset to return to the system icon, name and shape.</li>
+    </ol>
+
+    <div class="callout">
+      <span class="callout-title">Leaving with unsaved edits</span>
+      <p>If you change something and try to close the Edit sheet, Nexus asks first instead of quietly
+        dropping your work.</p>
+    </div>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/icons-page.jpg" width="575" height="1280"
+        alt="The Icons page, previewing icon size, shape and icon pack.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>icons-page.jpg</code>
+      </div>
+      <figcaption>The Icons page previews size, shape and pack using real app icons.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch11">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 12 ============================== -->
+  <section class="chapter" id="ch12">
+    <p class="chapter-number">Chapter 12</p>
+    <h2>Typography and language</h2>
+
+    <p><span class="path">Settings &rsaquo; Typography</span> changes the font used across the launcher
+      and the language the app speaks, independently of your phone's language.</p>
+
+    <h3>The preview</h3>
+    <p>A specimen line reads <span class="path">Aa Bb Gg Qq 0123456789</span> so every typeface can be
+      compared on the same letters, with a sentence in the selected language underneath and an
+      <span class="path">LTR</span> or <span class="path">RTL</span> badge.</p>
+
+    <h3>Font Family</h3>
+    <p>Fourteen fonts ship with the app:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Font</th><th>Character</th></tr></thead>
+        <tbody>
+          <tr><td>Nexus Default</td><td>Nexus brand typeface (Google Sans Flex)</td></tr>
+          <tr><td>System Default</td><td>Your device's font</td></tr>
+          <tr><td>Sans, Serif, Mono, Medium</td><td>The classic Android families</td></tr>
+          <tr><td>Roboto</td><td>Classic Android geometric</td></tr>
+          <tr><td>Inter</td><td>Modern grotesque sans</td></tr>
+          <tr><td>Manrope</td><td>Contemporary geometric sans</td></tr>
+          <tr><td>IBM Plex Sans</td><td>Engineered grotesque sans</td></tr>
+          <tr><td>Lora</td><td>Contemporary serif</td></tr>
+          <tr><td>Playpen</td><td>Casual handwriting</td></tr>
+          <tr><td>Elms Sans</td><td>Expressive grotesque</td></tr>
+          <tr><td>Bitcount</td><td>Single-line retro pixel font</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Choosing a font applies it immediately, everywhere: settings, sheets, dialogs, context menus, the
+      drawer, and the text inside Nexus widgets.</p>
+
+    <h3>Custom Fonts</h3>
+    <p>Use <span class="path">+ Add Font</span> to import a <code>.ttf</code> or <code>.otf</code> file.
+      Imported fonts appear in the font list and can be deleted later; deleting asks first. A file that
+      is not a valid font is rejected with a message rather than applied.</p>
+
+    <h3>Language</h3>
+    <p>Eleven choices: System default, English, Spanish, Portuguese (Brazil), Hindi, Indonesian, German,
+      French, Nepali, Arabic and Hebrew. The sheet shows each language in its own script. Changing
+      language reloads Settings so the new strings appear immediately.</p>
+
+    <div class="callout tip">
+      <span class="callout-title">Arabic and Hebrew</span>
+      <p>Text and navigation mirror to right-to-left, but your home screen layout does not. Icons,
+        widgets and pages keep their exact positions &mdash; a deliberate choice, so switching language
+        never rearranges your work.</p>
+    </div>
+
+    <p class="back-top"><a href="#ch12">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 13 ============================== -->
+  <section class="chapter" id="ch13">
+    <p class="chapter-number">Chapter 13</p>
+    <h2>Wallpaper and Wallpaper Studio</h2>
+
+    <div class="callout">
+      <span class="callout-title">Where to find it</span>
+      <p>Long-press empty home space and choose <span class="path">Wallpaper</span>. The wallpaper sheet
+        is not in Settings; the Theme page links to it for the frost capture step.</p>
+    </div>
+
+    <h3>The five tabs</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tab</th><th>Contents</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>System</td>
+            <td>Your current wallpaper, plus the one-time frost capture and a Clear button</td>
+          </tr>
+          <tr>
+            <td>Nexus</td>
+            <td>Nine designed presets and twenty-four gradients</td>
+          </tr>
+          <tr>
+            <td>Studio</td>
+            <td>Wallpaper Studio: Quick Create, Custom Wallpaper, Edit Current setup</td>
+          </tr>
+          <tr>
+            <td>Gallery</td>
+            <td>Your six most recent images, then More / Choose photo</td>
+          </tr>
+          <tr>
+            <td>Others</td>
+            <td>Other wallpaper apps installed on your phone</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Nexus presets</h3>
+    <p>Nine wallpapers are designed for the glass styles: Obsidian Stealth, Nexus Core, Frost Aurora,
+      Prism Beam, Liquid Quartz, Cyber Horizon, Monolith, Frosted Capsule and Titanium Grid. The light
+      fields in Frost Aurora, Prism Beam and Liquid Quartz are tuned to show refraction in frosted
+      widgets and folders.</p>
+    <p>Twenty-four gradients sit in a second carousel, from Winter Woods and Peach Sea to Crimson Tide,
+      Kashmir and Blue and Orange.</p>
+
+    <h3>Dim and tint</h3>
+    <p>Above the tabs are a live preview and two sliders, <span class="path">Dim</span> and
+      <span class="path">Strength</span>, with a colour wheel. Use them to darken a bright photo or wash
+      it with a colour. The treatment is previewed live before you apply it.</p>
+
+    <h3>Applying</h3>
+    <p><span class="path">Apply</span> asks where the wallpaper should go:
+      <span class="path">Home Screen</span>, <span class="path">Lock Screen</span> or
+      <span class="path">Both</span>. Choosing Both sets the lock screen first, so a failure there
+      cannot leave the home screen half-changed. Nexus-made and gallery wallpapers are also written to
+      Android's own wallpaper slot, so the recents screen and system settings show the same image.</p>
+
+    <h3>Wallpaper Studio</h3>
+    <p>Studio is a design tool for launcher-aware wallpapers. It can start from your current home layout
+      as a reference layer, or from a blank canvas, and offers:</p>
+    <ul class="compact">
+      <li><strong>Shapes</strong> &mdash; rectangle, rounded rectangle, circle, line, polygon and blob,
+        placed by touch.</li>
+      <li><strong>Images</strong> &mdash; your own pictures with non-destructive brightness, contrast,
+        saturation, tint and opacity.</li>
+      <li><strong>Snapping</strong> &mdash; to cell centres, screen centre and widget bounds.</li>
+      <li><strong>Create Backdrop</strong> &mdash; generates a backdrop underneath selected widgets and
+        folders.</li>
+      <li><strong>Undo and redo</strong>, plus Wallpaper Only, Home Preview and Grid Preview modes.</li>
+      <li><strong>Save and apply</strong>, which also syncs the result to the system wallpaper.</li>
+    </ul>
+    <p>Projects are saved so you can reopen and adjust them later.</p>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/wallpaper-sheet.jpg" width="575" height="1280"
+        alt="The wallpaper sheet, with the live preview and treatment sliders.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>wallpaper-sheet.jpg</code>
+      </div>
+      <figcaption>The wallpaper sheet: live preview and treatment sliders above, tabs below.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch13">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 14 ============================== -->
+  <section class="chapter" id="ch14">
+    <p class="chapter-number">Chapter 14</p>
+    <h2>Immersive Mode</h2>
+
+    <p>Immersive Mode hides Android's system bars and replaces the status bar with one Nexus draws
+      itself. You can shape that row into almost anything, from a single minimal clock to a full row of
+      pills with signal, battery and notifications.</p>
+
+    <p>Find it in <span class="path">Settings &rsaquo; Immersive Mode</span>. A live preview is pinned
+      above the settings and updates as you change things.</p>
+
+    <h3>Turning it on</h3>
+    <ul class="compact">
+      <li><span class="path">Immersive Mode</span> &mdash; hides the system bars. Swipe from an edge to
+        bring them back temporarily.</li>
+      <li><span class="path">Hide navigation bar</span> &mdash; appears only while Immersive is on. Off
+        keeps the buttons or gesture bar on screen.</li>
+    </ul>
+
+    <h3>Row presets</h3>
+    <p>Four starting points: <span class="path">Minimal</span>, <span class="path">Glass</span>,
+      <span class="path">Ring</span> and <span class="path">Classic</span>. A preset changes appearance
+      only &mdash; never which items are shown, the clock style or the font.</p>
+
+    <h3>Bar Layout</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Setting</th><th>Options</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>Nexus Status Bar</td><td>On / Off</td><td>On</td></tr>
+          <tr><td>Position</td><td>Top / Bottom</td><td>Top</td></tr>
+          <tr><td>Height</td><td>24&ndash;48 dp</td><td>28 dp</td></tr>
+          <tr><td>Background</td><td>Transparent / Frosted / Solid</td><td>Frosted</td></tr>
+          <tr><td>Opacity</td><td>10&ndash;90%</td><td>40%</td></tr>
+          <tr><td>Faded background</td><td>On / Off</td><td>Off</td></tr>
+          <tr><td>Segmented pills</td><td>On / Off</td><td>On</td></tr>
+          <tr><td>Side padding</td><td>0&ndash;24 dp</td><td>0 dp</td></tr>
+          <tr><td>Font</td><td>Follow launcher, or a specific font</td><td>Follow launcher</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Segmented pills</strong> gives each module its own capsule; turning it off draws one
+      continuous bar. <strong>Faded background</strong> softens the bar's edge into the wallpaper.</p>
+
+    <h3>What to display</h3>
+    <p>Six items, all on by default. Each has its own style options:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Styles</th><th>Extra options</th></tr></thead>
+        <tbody>
+          <tr><td>Clock</td><td>Default, 12-hour, 24-hour, Seconds, With date</td><td>Position: Left, Centre, Right. With date adds Date: Short, Long, Weekday</td></tr>
+          <tr><td>Notifications</td><td>Count, App icons, Dot</td><td>Icons shown 1&ndash;10, count silent notifications, count apps instead of notifications</td></tr>
+          <tr><td>Battery</td><td>Bar, Capsule, Segmented, Ring, Number only</td><td>Percentage: Beside, Inside, Off. Low battery below 5&ndash;30%; shimmer while charging</td></tr>
+          <tr><td>Mobile signal</td><td>Bars, Arc, Dots</td><td>Show carrier name, show band</td></tr>
+          <tr><td>Wi-Fi</td><td>Arcs, Bars, Dots</td><td>&mdash;</td></tr>
+          <tr><td>System icons</td><td>Do Not Disturb, alarm, silent and more</td><td>On / Off</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Using the row</h3>
+    <ul>
+      <li><strong>Pull down</strong> on the row to open the launcher's notification sheet.</li>
+      <li><strong>Tap the notification icons or count</strong> to open the same sheet.</li>
+      <li><strong>Tap the clock</strong> to open your alarm app; the battery area opens battery
+        settings.</li>
+      <li><strong>Swipe from the screen edge</strong> to reveal the real system bars when you need
+        them.</li>
+    </ul>
+
+    <div class="callout tip">
+      <span class="callout-title">Start with a preset</span>
+      <p>Pick Glass or Ring, then adjust only the items you care about. Changing a preset later keeps
+        your item choices intact, so experimenting is safe.</p>
+    </div>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/immersive-mode.jpg" width="575" height="1280"
+        alt="Immersive Mode, with the pinned live preview above the settings.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>immersive-mode.jpg</code>
+      </div>
+      <figcaption>The pinned preview reflects every change live, without leaving the page.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch14">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 15 ============================== -->
+  <section class="chapter" id="ch15">
+    <p class="chapter-number">Chapter 15</p>
+    <h2>Nexus Island</h2>
+
+    <p>Nexus Island is an optional morphing pill that sits over your camera cutout. When something
+      happens &mdash; a download finishes, a track changes, the battery gets low &mdash; it expands
+      briefly to show you, then collapses back to a small capsule.</p>
+
+    <div class="callout warning">
+      <span class="callout-title">It needs Immersive Mode</span>
+      <p>The Island lives inside Nexus's own status row, which only appears in Immersive Mode. If
+        Immersive is off, the Island page shows a single row reading
+        <span class="path">"Needs Immersive mode"</span>; tapping it takes you there.</p>
+    </div>
+
+    <h3>Settings</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Setting</th><th>Range or options</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>Enable Nexus Island</td><td>On / Off</td><td>Off</td></tr>
+          <tr><td>Size and Position</td><td>Opens the calibration sheet; the row shows the current size</td><td>110 &times; 28 dp</td></tr>
+          <tr><td>Animation speed</td><td>50&ndash;150%</td><td>100%</td></tr>
+          <tr><td>Capsule Haptics</td><td>On / Off</td><td>On</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Calibrating it</h3>
+    <p>Every phone puts its cutout in a different place, so the Island can be moved and resized to sit
+      exactly over it. Open <span class="path">Size and Position</span>:</p>
+    <ul class="compact">
+      <li><span class="path">Horizontal Offset</span> &mdash; &minus;100 to 100, with a
+        <span class="path">Center</span> button.</li>
+      <li><span class="path">Vertical Offset</span> &mdash; &minus;25 to 35, with an
+        <span class="path">Align</span> button.</li>
+      <li><span class="path">Capsule Width</span> &mdash; 50&ndash;260 dp, default 110.</li>
+      <li><span class="path">Capsule Height</span> &mdash; 20&ndash;44 dp, default 28.</li>
+    </ul>
+    <p>The sheet's guide text explains the goal: align the capsule directly over the cutout, and the
+      status row automatically pushes its information to the sides so nothing overlaps.</p>
+
+    <h3>Mini Capsule Events</h3>
+    <p>Nine triggers, each individually switchable and all on by default:</p>
+    <div class="two-column">
+      <ul class="compact">
+        <li>Live activities &mdash; downloads, navigation, rides and other apps showing live progress</li>
+        <li>Music</li>
+        <li>Charging</li>
+        <li>Low battery</li>
+        <li>Bluetooth</li>
+      </ul>
+      <ul class="compact">
+        <li>Timer</li>
+        <li>Stopwatch</li>
+        <li>Do Not Disturb</li>
+        <li>Calendar</li>
+      </ul>
+    </div>
+    <p>If the Nearby devices permission is missing, the Bluetooth row says so and links to the fix.</p>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/island-calibration.jpg" width="575" height="1280"
+        alt="Nexus Island calibration, offsetting the capsule to line up with the camera cutout.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>island-calibration.jpg</code>
+      </div>
+      <figcaption>Calibration: offset the capsule until it sits exactly over the camera cutout.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch15">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 16 ============================== -->
+  <section class="chapter" id="ch16">
+    <p class="chapter-number">Chapter 16</p>
+    <h2>Notifications and badges</h2>
+
+    <p>Nexus can show unread counts on your icons and give you a notification panel of its own, drawn in
+      the launcher instead of Android's. Both depend on one permission: Notification Access.</p>
+
+    <h3>Badges</h3>
+    <p>Find them in <span class="path">Settings &rsaquo; Notifications &amp; Permissions &rsaquo;
+      Notification Badges</span>.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Setting</th><th>Options</th><th>Default</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>App Icon Badges</td><td>Off / Dot / Count</td><td>Dot</td><td>Dot is a small dot; Count is a numbered pill, capped at 99+</td></tr>
+          <tr><td>Folder Badges</td><td>Off / Dot / Count</td><td>Dot</td><td>Totals every app inside the folder</td></tr>
+          <tr><td>Notification Badge Color</td><td>Red (default), Green, Blue, or custom</td><td>Red</td><td>Tap the circle to pick any colour</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Badges appear on home screen icons, dock icons and drawer icons, and update in real time.</p>
+
+    <h3>Notification history</h3>
+    <ul class="compact">
+      <li><span class="path">Keep notifications</span> &mdash; off by default. When on, notifications you
+        have already cleared are still readable in Nexus's own sheet. The text is stored on this phone.</li>
+      <li><span class="path">Keep for</span> &mdash; 1 hour, 6 hours, 1 day, 3 days or 7 days.</li>
+    </ul>
+
+    <h3>System &amp; Permissions</h3>
+    <p>The page lists every permission with a counter such as
+      <span class="path">"4 of 8 permissions granted"</span> and a status of
+      <span class="path">Granted</span>, <span class="path">Tap to enable</span> or
+      <span class="path">Enabled</span>. Each row explains what it unlocks, so you can grant only what
+      you need. See <a href="#ch1">Chapter 1</a> for the full list.</p>
+
+    <h3>The notification sheet</h3>
+    <p>Open it by pulling down on the immersive status row, tapping its notification icons, or from a
+      gesture you have assigned.</p>
+    <ul>
+      <li><strong>Swipe a notification sideways</strong> to dismiss it; ongoing notifications resist and
+        spring back.</li>
+      <li><strong>Tap</strong> a notification to open it. Up to three action buttons appear inline, such
+        as Reply or Mark as read.</li>
+      <li><strong>Tap body text</strong> to expand a long message.</li>
+      <li><strong>Clear</strong> dismisses everything and wipes the stored history.</li>
+      <li><strong>The gear</strong> opens in-sheet Notification Settings: keep notifications, retention,
+        Clear History, Group by App, Show Silent Notifications, Notification Listener Access, and Status
+        Bar Appearance.</li>
+      <li>Notifications are grouped as <span class="path">Now</span> and
+        <span class="path">Earlier</span>; when there are none, the sheet shows
+        <span class="path">"All Caught Up"</span>.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-title">Without Notification Access</span>
+      <p>The sheet explains the permission and offers to open the system setting. Badges and the Music
+        widget stay inactive until it is granted.</p>
+    </div>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/notification-sheet.jpg" width="575" height="1280"
+        alt="The in-launcher notification sheet, with inline actions and a Clear control.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>notification-sheet.jpg</code>
+      </div>
+      <figcaption>The in-launcher notification sheet: inline actions, a Clear control and per-row dismiss.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch16">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 17 ============================== -->
+  <section class="chapter" id="ch17">
+    <p class="chapter-number">Chapter 17</p>
+    <h2>App Lock</h2>
+
+    <p>App Lock asks for your fingerprint, face or screen lock before a chosen app opens. It protects
+      apps launched from Nexus; Strict Lock Mode extends that to other ways in.</p>
+
+    <p>Set it up in <span class="path">Settings &rsaquo; App Lock</span>. Everything on this page applies
+      immediately &mdash; there is no Apply button.</p>
+
+    <h3>How App Lock works</h3>
+    <p>The page opens with a short explanation: locked apps ask for your fingerprint, face or screen
+      lock, and Strict Lock Mode covers other routes into the app.</p>
+
+    <h3>Authentication required</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Setting</th><th>Options</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>Opening locked apps</td><td>Every time, Until the phone locks, After 1 minute, After 5 minutes</td><td>Until the phone locks</td></tr>
+          <tr><td>Opening App Lock settings</td><td>On / Off &mdash; asks once until the phone locks</td><td>On</td></tr>
+          <tr><td>Removing a lock or restoring a backup</td><td>On / Off &mdash; always asks</td><td>On</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Hide content</h3>
+    <p><span class="path">Cover locked apps' widgets</span> replaces a locked app's widget with its name
+      and <span class="path">Tap to unlock</span> until you authenticate. While locked, notification
+      content and Nexus Island content for that app read <span class="path">"Content hidden"</span>.</p>
+
+    <h3>Strict Lock Mode</h3>
+    <ul>
+      <li>The toggle is described as locking apps opened from notifications, Recents, links or other
+        launchers.</li>
+      <li>Turning it on shows an explanation about the Accessibility service, with
+        <span class="path">I understand and enable</span> and <span class="path">Cancel</span>. If the
+        service is off, Nexus opens Accessibility settings and finishes enabling when you return.</li>
+      <li><span class="path">Lock recent apps</span> hides the recents screen behind authentication. It
+        needs Strict Lock Mode and Accessibility, and warns that a locked app or Recents preview may
+        flash briefly before the lock appears.</li>
+      <li>Locking recents works with three-button navigation; gesture navigation is not supported for
+        that one feature.</li>
+    </ul>
+
+    <h3>Choosing apps</h3>
+    <ul>
+      <li><strong>Individual apps</strong> &mdash; a searchable list with a switch per app. Apps already
+        in a lock group are not repeated here.</li>
+      <li><strong>Lock groups</strong> &mdash; create a named group and pick its apps. Group rows have
+        their own enable switch, an app count, and Edit and Delete actions. Deleting a group does not
+        change apps locked on their own or in other groups.</li>
+    </ul>
+
+    <h3>Locking from the home screen</h3>
+    <p>Long-press any app &mdash; on the home screen, in the dock or in the drawer &mdash; and choose
+      <span class="path">Lock App</span>. The same menu offers <span class="path">Unlock App</span>
+      later, which asks you to confirm your identity first.</p>
+
+    <div class="callout warning">
+      <span class="callout-title">Set a screen lock first</span>
+      <p>App Lock uses your device's own authentication. Without a screen lock, Nexus tells you to set
+        one up before the feature can work.</p>
+    </div>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/app-lock.jpg" width="575" height="1280"
+        alt="App Lock settings, showing the authentication policy and Strict Lock Mode.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>app-lock.jpg</code>
+      </div>
+      <figcaption>App Lock: authentication policy, content hiding and Strict Lock Mode in one page.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch17">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 18 ============================== -->
+  <section class="chapter" id="ch18">
+    <p class="chapter-number">Chapter 18</p>
+    <h2>Search</h2>
+
+    <p>Search is one field for apps, contacts, sums, conversions and the web. Open it from the drawer's
+      search pill, from a home swipe, from the Search widget, or from the notification sheet's settings
+      shortcuts.</p>
+
+    <h3>Using it</h3>
+    <ul>
+      <li>The field reads <span class="path">Search Nexus</span>.</li>
+      <li>With nothing typed, you get <span class="path">NEW APPS</span> and
+        <span class="path">RECENT APPS</span>, up to eight each.</li>
+      <li>Results are grouped as APPS, CONTACTS, CALCULATOR, CONVERSION, WEB and MAPS.</li>
+      <li>Two action rows sit at the end: <span class="path">Search web for "…"</span> and
+        <span class="path">Open Maps for "…"</span>.</li>
+      <li>The suggestion chips show examples: <span class="path">Try: 5km to miles • 25c to f</span> and
+        <span class="path">Try: coffee near me • navigate to airport</span>.</li>
+    </ul>
+
+    <h3>Search settings</h3>
+    <p><span class="path">Settings &rsaquo; Search</span> has two groups, all on by default:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Group</th><th>Toggle</th><th>Description shown</th></tr></thead>
+        <tbody>
+          <tr><td>Micro Actions</td><td>Calculator</td><td>Solve mathematical equations directly in search</td></tr>
+          <tr><td>Micro Actions</td><td>Unit Conversion</td><td>Convert currency, metrics and units of measurement</td></tr>
+          <tr><td>Search Sources</td><td>Contacts</td><td>Show matching device contacts in search results</td></tr>
+          <tr><td>Search Sources</td><td>Web Search</td><td>Show web suggestions and the default search engine shortcut</td></tr>
+          <tr><td>Search Sources</td><td>Maps Search</td><td>Show a Maps option when the query has no app or contact match</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The same toggles are reachable from the gear inside the search overlay, so you can change them
+      without leaving what you were doing.</p>
+
+    <div class="callout tip">
+      <span class="callout-title">Good queries to try</span>
+      <p><span class="path">18*7+4</span> for arithmetic, <span class="path">12 km to miles</span> for a
+        conversion, and <span class="path">coffee near me</span> for a Maps suggestion. Maps only
+        appears when no app or contact already matched, so it never buries a real result.</p>
+    </div>
+
+    <h3>Search widget</h3>
+    <p>The Search widget is a compact launcher bar with separate touch targets: the field opens Nexus
+      search, the microphone opens voice search, and larger styles add an apps area, an assistant button
+      and a Lens button. It resizes horizontally only, so it always stays a bar.</p>
+
+    <p class="back-top"><a href="#ch18">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 19 ============================== -->
+  <section class="chapter" id="ch19">
+    <p class="chapter-number">Chapter 19</p>
+    <h2>News feed and Library</h2>
+
+    <p>Nexus includes an RSS reader that lives one swipe to the right of your first home page, and a
+      document Library for things you want to read offline.</p>
+
+    <h3>Opening and turning it off</h3>
+    <ul>
+      <li><strong>Open:</strong> from the first home page, swipe right.</li>
+      <li><strong>Turn off:</strong> <span class="path">Settings &rsaquo; Home Screen &rsaquo; News Feed
+        &rsaquo; Swipe right to access RSS feed</span>. On by default.</li>
+    </ul>
+
+    <h3>The five tabs</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tab</th><th>What it shows</th></tr></thead>
+        <tbody>
+          <tr><td>Feed</td><td>Your subscriptions, newest first, led by a large hero story</td></tr>
+          <tr><td>Explore</td><td>Curated categories to discover new sources</td></tr>
+          <tr><td>Saved</td><td>Stories you bookmarked</td></tr>
+          <tr><td>Library</td><td>Your documents, with <span class="path">Add Document</span></td></tr>
+          <tr><td>Settings</td><td>Auto-refresh interval, Manage Sources, Add New Source</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Reading</h3>
+    <ul>
+      <li>Tap a story to open the reader. The reader is part of Nexus, so it opens inside the app.</li>
+      <li>Long-press a card for its menu: save or remove a bookmark, share through Android's share sheet,
+        or hide the story.</li>
+      <li>The header menu collapses the feed into a compact headline-only list &mdash; two lines of
+        text per story, no images. Your choice is remembered.</li>
+      <li>Category chips below the header filter the feed by topic.</li>
+    </ul>
+
+    <h3>Adding sources</h3>
+    <p>In the Settings tab, paste an RSS feed, a website address or a subreddit into
+      <span class="path">Add New Source</span>. Active sources can be switched off, deleted, or
+      reordered by dragging. A curated catalog fills in sources you do not have yet.</p>
+
+    <h3>Library</h3>
+    <p><span class="path">Add Document</span> imports a PDF, EPUB or text file. Documents open in the
+      Nexus reader and stay on the device.</p>
+
+    <div class="callout">
+      <span class="callout-title">Refreshing</span>
+      <p>The feed refreshes when you open it if the configured interval has passed &mdash; 15 minutes,
+        30 minutes, 1 hour, 6 hours or 24 hours.</p>
+    </div>
+
+    <p class="back-top"><a href="#ch19">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 20 ============================== -->
+  <section class="chapter" id="ch20">
+    <p class="chapter-number">Chapter 20</p>
+    <h2>Backup, restore and sharing</h2>
+
+    <p>Your layout, folders, widgets and settings can be saved to a single file and restored later or on
+      another phone. Nova Launcher backups can also be imported.</p>
+
+    <h3>Making a backup</h3>
+    <ol class="steps">
+      <li>Open <span class="path">Settings &rsaquo; Backup &amp; Restore &rsaquo; Backups</span>.</li>
+      <li>Set <span class="path">Backup Location</span> &mdash; choose a folder, internal storage or SD
+        card. Nexus remembers it; if the folder disappears it asks you to choose again.</li>
+      <li>Tap <span class="path">Back Up Now</span>. The file appears as a card under
+        <span class="path">EXISTING BACKUPS</span>, showing page and item counts.</li>
+    </ol>
+
+    <h3>Restoring</h3>
+    <p>Tap a backup card to enlarge it, then use <span class="path">Restore</span>. Nexus warns that the
+      current layout, folders and settings will be replaced and that this cannot be undone. Long-press a
+      card to delete it.</p>
+
+    <div class="callout warning">
+      <span class="callout-title">Widgets are re-bound, not copied</span>
+      <p>A backup stores which widget each item is, not the widget's contents. After restoring, Nexus
+        asks Android to bind each widget again. If something needs your attention, a dialog titled
+        <span class="path">"Restore needs your attention"</span> lists each case:</p>
+      <ul class="compact">
+        <li><strong>App not installed</strong> &mdash; that widget is removed from the restored layout.</li>
+        <li><strong>Needs permission</strong> &mdash; Android refused the bind; grant the permission and
+          try again.</li>
+        <li><strong>Tap it to finish setting up</strong> &mdash; the widget's own configuration is still
+          pending.</li>
+      </ul>
+    </div>
+
+    <h3>What a backup contains</h3>
+    <ul class="compact">
+      <li>Every home item: apps, folders, shortcuts, widgets, Mosaics, boxes and Canvases, with positions,
+        spans, stacking and padding.</li>
+      <li>Folder contents and covers, custom app icons, and gallery wallpapers Nexus itself stored.</li>
+      <li>All launcher settings, dock settings, theme, typography, language, feed sources, hidden apps,
+        gesture assignments and App Lock state.</li>
+      <li>Notes widget content and per-widget configuration.</li>
+    </ul>
+    <p><strong>Not included:</strong> the apps themselves. Target apps must be installed on the new
+      phone, or their icons and widgets cannot appear.</p>
+
+    <h3>Importing from Nova Launcher</h3>
+    <p><span class="path">Settings &rsaquo; Backup &amp; Restore &rsaquo; Import from Nova Launcher</span>
+      accepts a <code>.novabackup</code> file. The confirmation is explicit about the trade:</p>
+    <div class="callout">
+      <p>Only app, folder and widget <em>positions</em> transfer. Wallpaper, theme, icon pack and gesture
+        settings are <strong>not</strong> imported. The import replaces your current Nexus home screen.</p>
+    </div>
+    <p>Widgets from a Nova backup go through the same re-bind process as a Nexus backup.</p>
+
+    <h3>Share your setup</h3>
+    <p><span class="path">Settings &rsaquo; Share your setup</span> turns your home screen into a
+      shareable image.</p>
+    <ul class="compact">
+      <li>Uses a live capture of your home screen, or a custom image you supply.</li>
+      <li><strong>Setup settings:</strong> Orientation, Background, Screen corner radius, Show Nexus
+        Launcher logo, Frame (None, Rounded, Border, Phone) and Frame color.</li>
+      <li><span class="path">Save image</span> writes a PNG through the system file picker &mdash; no
+        storage permission needed. <span class="path">Share</span> opens the Android share sheet.</li>
+    </ul>
+
+    <figure class="shot">
+      <img class="screenshot-image" src="assets/guide/backups.jpg" width="575" height="1280"
+        alt="The backup list, with each backup shown as a card.">
+      <div class="shot-pending">
+        <strong>Screenshot coming</strong>
+        <code>backups.jpg</code>
+      </div>
+      <figcaption>Backups are listed as cards; tap one to restore, long-press to delete.</figcaption>
+    </figure>
+
+    <p class="back-top"><a href="#ch20">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 21 ============================== -->
+  <section class="chapter" id="ch21">
+    <p class="chapter-number">Chapter 21</p>
+    <h2>Settings map</h2>
+
+    <p>Settings opens on a hub with a search field. Type any part of a setting's name &mdash; or what it
+      does &mdash; and results are split into <span class="path">Pages</span> and
+      <span class="path">Settings</span>. The list icon at the top right of any page jumps directly to
+      another page without going back to the hub.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Group</th><th>Page</th><th>What is there</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="4">Layout</td><td>Home Screen</td><td>Grid, spacing, labels, transitions, news feed</td></tr>
+          <tr><td>App Drawer</td><td>Mode, columns, sort, search pill, categories, rail, hidden apps</td></tr>
+          <tr><td>Dock</td><td>Size, background, labels, search</td></tr>
+          <tr><td>Immersive Mode</td><td>Status row, pills, clock, battery, signal</td></tr>
+          <tr><td rowspan="5">Appearance</td><td>Theme</td><td>Mode, palette, UI style, background, accent, accessibility</td></tr>
+          <tr><td>Icons</td><td>Size, shape, icon pack, themed icons</td></tr>
+          <tr><td>Typography</td><td>Font family, custom fonts, language</td></tr>
+          <tr><td>Nexus Island</td><td>Pill enablement, calibration, events</td></tr>
+          <tr><td>Canvas</td><td>Saved designs and Canvas Studio</td></tr>
+          <tr><td rowspan="4">Behavior</td><td>Gestures</td><td>Home swipes and action picker</td></tr>
+          <tr><td>Search</td><td>Micro actions and search sources</td></tr>
+          <tr><td>Notifications &amp; Permissions</td><td>Badges, history, every permission</td></tr>
+          <tr><td>App Lock</td><td>Authentication policy, groups, strict mode</td></tr>
+          <tr><td rowspan="4">System</td><td>Backup &amp; Restore</td><td>Backups and Nova import</td></tr>
+          <tr><td>Share your setup</td><td>Shareable home screen image</td></tr>
+          <tr><td>Licenses</td><td>Font and library licenses</td></tr>
+          <tr><td>Privacy policy</td><td>Opens the published policy</td></tr>
+          <tr><td rowspan="3">Feedback</td><td>Send feedback</td><td>Report a problem or suggest an idea</td></tr>
+          <tr><td>Send performance report</td><td>Frame times from your last home swipes</td></tr>
+          <tr><td>Crash logs</td><td>Read or send saved crash reports</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="screen-grid">
+      <div class="shot">
+        <img class="screenshot-image" src="assets/guide/settings-hub.jpg" width="575" height="1280"
+          alt="The Settings hub: a search field above the Layout, Appearance, Behavior, System and Feedback groups.">
+        <div class="shot-pending">
+          <strong>Screenshot coming</strong>
+          <code>settings-hub.jpg</code>
+        </div>
+        <figcaption>The hub: one search field, five groups.</figcaption>
+      </div>
+      <div class="shot">
+        <img class="screenshot-image" src="assets/guide/settings-jump.jpg" width="575" height="1280"
+          alt="The page list opened from the top-right list icon, switching settings pages without returning to the hub.">
+        <div class="shot-pending">
+          <strong>Screenshot coming</strong>
+          <code>settings-jump.jpg</code>
+        </div>
+        <figcaption>Jump between pages without returning to the hub.</figcaption>
+      </div>
+      <div class="shot">
+        <img class="screenshot-image" src="assets/guide/settings-search.jpg" width="575" height="1280"
+          alt="Settings search results for frost, split into pages and individual controls.">
+        <div class="shot-pending">
+          <strong>Screenshot coming</strong>
+          <code>settings-search.jpg</code>
+        </div>
+        <figcaption>Search splits results into pages and individual controls.</figcaption>
+      </div>
+    </figure>
+
+    <div class="callout tip">
+      <span class="callout-title">Apply is not universal</span>
+      <p>Home Screen, App Drawer and Dock stage changes behind an Apply bar. Theme, Typography, Canvas
+        and App Lock apply immediately. The Apply bar simply is not shown on pages that apply
+        immediately, so its absence is not a bug.</p>
+    </div>
+
+    <p class="back-top"><a href="#ch21">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 22 ============================== -->
+  <section class="chapter" id="ch22">
+    <p class="chapter-number">Chapter 22</p>
+    <h2>Privacy, feedback and diagnostics</h2>
+
+    <p>Nexus keeps your data on the phone. There is no account, no sign-in and no cloud sync; backups are
+      files you choose the location of.</p>
+
+    <h3>Privacy policy</h3>
+    <p><span class="path">Settings &rsaquo; Privacy policy</span> opens the published policy in your
+      browser.</p>
+
+    <h3>Send feedback</h3>
+    <p><span class="path">Settings &rsaquo; Send feedback</span> opens a form for problems and ideas.</p>
+
+    <h3>Performance report</h3>
+    <p>If paging feels slow, open <span class="path">Send performance report</span>. It includes frame
+      times from your recent home swipes, plus your version, device, screen and blur decision. If you
+      have not swiped yet, Nexus asks you to swipe a few times first.</p>
+
+    <h3>Crash logs</h3>
+    <p>After a crash Nexus restarts itself and offers to send a report. The report contains the error,
+      the app version and your phone model. You can read, share or delete saved reports later in
+      <span class="path">Settings &rsaquo; Crash logs</span>; an empty list reads
+      <span class="path">"No crash logs"</span>.</p>
+
+    <div class="callout">
+      <span class="callout-title">What leaves the device</span>
+      <p>Only what you actively send: a crash report, a performance report or feedback. Nothing is
+        uploaded automatically.</p>
+    </div>
+
+    <p class="back-top"><a href="#ch22">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 23 ============================== -->
+  <section class="chapter" id="ch23">
+    <p class="chapter-number">Chapter 23</p>
+    <h2>Troubleshooting</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Symptom</th><th>Cause and fix</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Frosted surfaces look flat or plain</td>
+            <td>Glass needs a captured wallpaper. Use <span class="path">Capture wallpaper for frost/liquid glass</span> on the Theme page. Also check that Background Layer is set to Wallpaper, not Theme Color.</td>
+          </tr>
+          <tr>
+            <td>No badges on icons</td>
+            <td>Grant Notification Access in <span class="path">Notifications &amp; Permissions</span>, and check that App Icon Badges is not set to Off.</td>
+          </tr>
+          <tr>
+            <td>Music widget shows a permission message</td>
+            <td>It needs Notification Access to read the current track.</td>
+          </tr>
+          <tr>
+            <td>Recent apps sections are empty</td>
+            <td>Grant App Usage Access. Search also offers <span class="path">Tap to enable Recent Apps</span>.</td>
+          </tr>
+          <tr>
+            <td>Weather asks for location every time</td>
+            <td>Grant Location Access once; the widget then loads directly.</td>
+          </tr>
+          <tr>
+            <td>Widgets missing after a restore</td>
+            <td>Read the <span class="path">Restore needs your attention</span> dialog. Widgets whose app is not installed are removed; others may need a permission or their own setup.</td>
+          </tr>
+          <tr>
+            <td>Cannot delete the last home page</td>
+            <td>By design &mdash; a launcher always needs one page. Add another first.</td>
+          </tr>
+          <tr>
+            <td>A folder refuses an app</td>
+            <td>The folder already contains that app. Nexus refuses duplicates rather than creating a second copy.</td>
+          </tr>
+          <tr>
+            <td>App Lock flashes an app briefly</td>
+            <td>Documented behaviour of Strict Lock Mode: a locked app or Recents preview may appear for a moment before the lock covers it.</td>
+          </tr>
+          <tr>
+            <td>Recents lock will not turn on</td>
+            <td>It needs Strict Lock Mode plus Accessibility, and three-button navigation rather than gesture navigation.</td>
+          </tr>
+          <tr>
+            <td>Icons jumped after changing columns or rotating</td>
+            <td>Positions are preserved by proportion and spill into free cells rather than overlapping. Increase rows or columns to give crowded items room.</td>
+          </tr>
+          <tr>
+            <td>A gesture does nothing</td>
+            <td>Check the action assigned in <span class="path">Gestures</span>. Lock Screen and some system actions need Accessibility.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Notes on this build</h3>
+    <p>Three details are worth knowing so they are not mistaken for something you did wrong:</p>
+    <ul class="compact">
+      <li><span class="path">None</span> and <span class="path">Slide</span> currently animate the same
+        way. If you want the least motion, turn on Reduce Motion as well.</li>
+      <li>The radial menu's <span class="path">Lock Layout</span> slice changes its own label to a
+        locked state, but does not yet lock the layout.</li>
+      <li>The Progress Bar widget exists in the app but is withheld from the picker in this release.</li>
+    </ul>
+
+    <p class="back-top"><a href="#ch23">&uarr; Back to top</a></p>
+  </section>
+
+  <!-- ============================== CHAPTER 24 ============================== -->
+  <section class="chapter" id="ch24">
+    <p class="chapter-number">Chapter 24</p>
+    <h2>Glossary and setup checklist</h2>
+
+    <h3>Glossary</h3>
+    <dl class="glossary">
+      <dt>A&ndash;Z rail</dt>
+      <dd>The alphabet strip on the drawer's edge. Drag along it to jump to a letter.</dd>
+
+      <dt>Canvas</dt>
+      <dd>A free-form design board placed on a home page, built from text, live values, widgets, apps,
+        shapes and images.</dd>
+
+      <dt>Frost capture</dt>
+      <dd>A one-time snapshot of a wallpaper Nexus did not set itself, used so glass surfaces can blur
+        it.</dd>
+
+      <dt>Home page</dt>
+      <dd>The page the Home button returns to. Set it from a Manage Pages card.</dd>
+
+      <dt>Immersive Mode</dt>
+      <dd>Hides Android's system bars and draws Nexus's own status row.</dd>
+
+      <dt>Living Mosaic</dt>
+      <dd>A widget container holding several widgets across pages, with Mosaic and Focus display modes.</dd>
+
+      <dt>Nexus Island</dt>
+      <dd>An optional capsule over the camera cutout that expands to show events.</dd>
+
+      <dt>Radial menu</dt>
+      <dd>The eight-slice menu that opens when you long-press empty home space.</dd>
+
+      <dt>Strict Lock Mode</dt>
+      <dd>Extends App Lock to apps opened from notifications, Recents, links and other launchers.</dd>
+
+      <dt>UI Style</dt>
+      <dd>How surfaces are drawn: Default, Frosted Glass, Neumorphism or Liquid Glass.</dd>
+    </dl>
+
+    <h3>First-week checklist</h3>
+    <p>Work through this at your own pace. Each item is independent.</p>
+    <ul class="checklist">
+      <li>Set Nexus as the default Home app.</li>
+      <li>Grant Notification Access if you want badges and the notification sheet.</li>
+      <li>Choose a theme mode and one UI Style you like.</li>
+      <li>Pick an accent colour, or turn the accent off for a neutral look.</li>
+      <li>Set your grid: columns, rows, icon size and label style.</li>
+      <li>Pick a drawer mode and a sort order.</li>
+      <li>Decide whether the dock stays visible or gives its space to the grid.</li>
+      <li>Create one folder for the apps you use together.</li>
+      <li>Place one widget you will actually look at.</li>
+      <li>Turn on Immersive Mode and pick a status row preset.</li>
+      <li>Assign the two home swipes to what you expect them to do.</li>
+      <li>Make a backup once the layout feels right.</li>
+    </ul>
+
+    <div class="callout tip">
+      <span class="callout-title">One last thing</span>
+      <p>Every setting in this manual is reversible. If an experiment goes wrong, Reset on the relevant
+        page, or a backup, puts things back.</p>
+    </div>
+
+    <p class="back-top"><a href="#ch24">&uarr; Back to top</a></p>
+  </section>
+
+  <hr>
+
+  <p class="guide-colophon">Nexus Launcher User Guide &middot; covers version 1.0.2 &middot; October 2026.</p>
+
+  </div>
+  </div>
+</main>
+
+<footer class="site-footer no-print">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="Nexus Launcher — home">
+        <svg class="brand-mark" viewBox="0 0 108 108" role="img" aria-label="Nexus Launcher">
+          <g transform="translate(4 6)" fill="rgb(42 46 51)">
+            <path d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+            <path d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+          </g>
+          <path fill="rgb(240 242 245)" d="M35 31h11v8l6.5 7.5-6.5 6.5V77H35V31z"/>
+          <path fill="rgb(240 242 245)" d="M73 77H62v-8l-6.5-7.5 6.5-6.5V31h11V77z"/>
+          <path fill="rgb(143 200 224)" d="M51.5 47.95l3.07 1.77v3.56l-3.07 1.77-3.07-1.77v-3.56z"/>
+        </svg>
+        <span class="brand-word">Nexus</span>
+      </a>
+      <p>A custom Android home screen by System Slate. Your layout stays on your device.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="setup.html">Setups</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.systemslate.nexuslauncher">Google Play</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="NEXUS_USER_GUIDE.html">User guide</a></li>
+        <li><a href="feedback.html">Send feedback</a></li>
+        <li><a href="mailto:systemslate.dev@gmail.com">Email us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy.html">Privacy policy</a></li>
+        <li><a href="privacy.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <p>&copy; 2026 System Slate. Nexus Launcher is not affiliated with Google or Android.</p>
+    <p>systemslate.dev@gmail.com</p>
+  </div>
+</footer>
+
+</body>
+</html>

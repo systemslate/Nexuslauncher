@@ -1,0 +1,144 @@
+/* Nexus Launcher website — shared navigation bar.
+   Kept out of site-ui.css so the printable user guide can load the same bar
+   without the rest of the site layer.
+
+   The bar follows the active theme. Print hides it, so the guide's paper
+   tokens never reach it. */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  color: var(--ink);
+  font-family: var(--font-body, "Nexus Text", system-ui, sans-serif);
+  font-size: 1rem;
+  line-height: 1.68;
+  text-align: start;
+}
+
+.nav *,
+.nav *::before,
+.nav *::after { box-sizing: border-box; }
+
+.nav a { text-decoration: none; }
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: min(100% - (clamp(1.1rem, 4vw, 2.75rem) * 2), 76rem);
+  margin-inline: auto;
+  min-height: 4.4rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex: none;
+  margin: 0;
+  color: var(--ink);
+}
+
+.brand:hover { color: var(--ink); }
+
+.brand-mark { width: 2.1rem; height: 2.1rem; flex: none; }
+.brand-mark > path { fill: var(--ink); }
+.brand-mark g { fill: color-mix(in srgb, var(--ink) 22%, var(--bg)); }
+
+.brand-word {
+  font-family: var(--font-display, "Nexus Round", system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  flex: 0 1 auto;
+  min-width: 0;
+  margin-left: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-links::-webkit-scrollbar { display: none; }
+
+/* the launcher's status-bar voice: mono, spaced, uppercase */
+.nav-links a {
+  display: block;
+  padding: 0.5rem 0.72rem;
+  border-radius: 99rem;
+  color: var(--ink-dim);
+  font-family: var(--font-mono, "Nexus Mono", ui-monospace, monospace);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+  background: var(--glass-hover);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--ink);
+  background: var(--glass-hover);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex: none;
+  padding: 0.55rem 1.05rem;
+  border: 1px solid transparent;
+  border-radius: 99rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-body, "Nexus Text", system-ui, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nav-cta:hover {
+  color: var(--bg);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+.nav-cta:active { transform: translateY(0); }
+
+@media (max-width: 46rem) {
+  .nav-cta { display: none; }
+  .nav-inner {
+    flex-wrap: wrap;
+    row-gap: 0.1rem;
+    min-height: auto;
+    padding-block: 0.55rem;
+  }
+  .brand-word { font-size: 0.85rem; letter-spacing: 0.24em; }
+  .nav-links {
+    width: 100%;
+    margin-left: 0;
+    gap: 0;
+    justify-content: space-between;
+  }
+  .nav-links a { padding: 0.35rem 0.35rem; font-size: 0.6rem; letter-spacing: 0.08em; }
+}

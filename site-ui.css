@@ -1,0 +1,342 @@
+/* Nexus Launcher website — shared interface layer.
+   Buttons, chips, widget cards, the dock, app-icon tiles, capability lists,
+   the closing call to action and the footer.
+   The navigation bar lives in site-nav.css so the user guide can share it. */
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.3rem;
+  border: 1px solid transparent;
+  border-radius: var(--pill);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  line-height: 1.2;
+  text-align: center;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  color: var(--bg);
+  box-shadow: none;
+}
+
+.btn-ghost {
+  border-color: var(--line-strong);
+  background: var(--glass);
+  color: var(--ink);
+}
+
+.btn-ghost:hover { color: var(--ink); background: var(--glass-hover); }
+
+.btn-sm { padding: 0.48rem 0.95rem; font-size: 0.84rem; }
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.7rem;
+}
+
+/* ---------- chips ---------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  background: var(--glass);
+  color: var(--ink-dim);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+/* ---------- widget card ----------
+   The launcher's building block: hairline rim, soft glass fill, generous
+   radius. Every preview on the site is framed as a widget. */
+
+.widget {
+  --tilt: 0deg;
+  position: relative;
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-widget);
+  background: linear-gradient(165deg, rgb(255 255 255 / 6%), rgb(255 255 255 / 1.5%));
+  box-shadow: var(--shadow-card);
+  transform: rotate(var(--tilt));
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.widget:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-lift);
+  transform: rotate(var(--tilt)) translateY(-0.3rem);
+}
+
+.widget-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.15rem 0.35rem 0.6rem;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.widget-bar .bar-dots {
+  display: inline-flex;
+  gap: 0.2rem;
+  letter-spacing: 0;
+}
+
+.widget-bar .bar-dots i {
+  width: 0.22rem;
+  height: 0.22rem;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 28%);
+}
+
+.widget-media {
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: calc(var(--radius-widget) - 0.6rem);
+  background: var(--navy-800);
+}
+
+.widget-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ---------- dock ----------
+   The launcher's dock: one rounded tray holding a primary action and a
+   quiet one. Reused for the hero, the closing CTA and the footer. */
+
+.dock {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--pill);
+  background: linear-gradient(180deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 3.5%));
+  box-shadow: 0 1.1rem 2.4rem rgb(0 0 0 / 42%), inset 0 1px 0 rgb(255 255 255 / 14%);
+}
+
+.dock-main {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.72rem 1.25rem;
+  border-radius: var(--pill);
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.dock-main:hover {
+  color: var(--bg);
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+.dock-alt {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.72rem 1.05rem;
+  border-radius: var(--pill);
+  color: var(--ink-dim);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.dock-alt:hover { background: rgb(255 255 255 / 8%); color: var(--ink); }
+
+.dock-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.15rem 1rem 0.15rem 1.15rem;
+  border-right: 1px solid var(--line);
+}
+
+.dock-date b {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.dock-date span {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ---------- capability lists ---------- */
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 0.9rem;
+}
+
+.capability-grid.three {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.capability {
+  padding: 1.3rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-widget);
+  background: linear-gradient(165deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 1.5%));
+}
+
+.capability h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.02rem;
+}
+
+.capability h3::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  flex: none;
+  border-radius: 0.16rem;
+  background: var(--ink);
+}
+
+.capability ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+}
+
+.capability li {
+  position: relative;
+  margin-bottom: 0.42rem;
+  padding-left: 0.95rem;
+}
+
+.capability li::before {
+  content: "";
+  position: absolute;
+  top: 0.68em;
+  left: 0;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--ink) 45%, transparent);
+}
+
+/* ---------- closing call to action ---------- */
+
+.cta {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.25rem, 5vw, 4rem) clamp(1.15rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(32rem 20rem at 50% -25%, color-mix(in srgb, var(--ink) 10%, transparent), transparent 72%),
+    linear-gradient(165deg, var(--glass), transparent);
+  text-align: center;
+}
+
+.cta h2 { margin-bottom: 0.7rem; }
+.cta p { max-width: 34rem; margin-inline: auto; color: var(--ink-dim); }
+.cta .island { margin-inline: auto; }
+.cta .island + h2 { margin-top: 1.1rem; }
+.cta .dock { width: min(100%, 27rem); margin: 1.7rem auto 0; }
+
+.cta-fine {
+  margin: 1.2rem 0 0;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 44rem) {
+  .dock {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .dock-main,
+  .dock-alt { flex: 1 1 100%; }
+
+  .dock-alt {
+    justify-content: center;
+    border: 1px solid var(--line-strong);
+  }
+
+  .cta .dock { width: 100%; }
+}
+
+/* Launcher icon badge: a 24px glyph, no chip. Tint follows the text color. */
+.icon-badge {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--ink);
+}
+
+.icon-badge svg { width: 1.5rem; height: 1.5rem; }
+
+.with-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}

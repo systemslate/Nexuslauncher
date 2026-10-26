@@ -1,0 +1,267 @@
+/* Nexus Launcher website — base layer.
+   Tokens, reset, typography, layout helpers and the wallpaper background.
+   Type faces: site-fonts.css. Navigation: site-nav.css. Components: site-ui.css.
+   Home page: site-home.css. Inner pages: site-page.css. Motion: site-play.css. */
+
+:root {
+  color-scheme: dark;
+
+  /* Dark theme, accent off. Text and surface carry the interface.
+     Other modes live in site-themes.css. */
+  --bg: rgb(18 18 18);
+  --bg-top: rgb(18 18 18);
+  --bg-bottom: rgb(18 18 18);
+  --surface: rgb(30 30 30);
+  --surface-raised: rgb(44 44 44);
+
+  --navy-950: var(--bg);
+  --navy-900: var(--bg);
+  --navy-800: var(--surface);
+  --navy-700: var(--surface-raised);
+  --teal-800: var(--surface);
+  --teal-600: var(--ink-dim);
+  --violet-700: var(--surface-raised);
+  --violet-500: var(--ink-dim);
+  --magenta-500: var(--ink-dim);
+  --cyan-400: var(--ink);
+  --cyan-300: var(--ink);
+
+  --ink: rgb(240 242 245);
+  --ink-dim: rgb(142 149 160);
+  --ink-muted: rgb(142 149 160);
+
+  --line: color-mix(in srgb, var(--ink) 12%, transparent);
+  --line-strong: color-mix(in srgb, var(--ink) 20%, transparent);
+  --glass: color-mix(in srgb, var(--ink) 5%, transparent);
+  --glass-hover: color-mix(in srgb, var(--ink) 8%, transparent);
+
+  --radius-xs: 0.55rem;
+  --radius-sm: 0.8rem;
+  --radius: 1.15rem;
+  --radius-widget: 1.6rem;
+  --radius-lg: 2.25rem;
+  --pill: 99rem;
+
+  --page: 76rem;
+  --gutter: clamp(1.1rem, 4vw, 2.75rem);
+  --section-y: clamp(3.5rem, 7vw, 6.5rem);
+
+  --font-display: "Nexus Default", "Nexus Round", system-ui, sans-serif;
+  --font-body: "Nexus Default", "Nexus Text", system-ui, sans-serif;
+  --font-mono: "Nexus Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --shadow-card: 0 1.4rem 3rem rgb(0 0 0 / 38%);
+  --shadow-lift: 0 1.7rem 3.4rem rgb(0 0 0 / 52%);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* the wallpaper: the theme's own top-to-bottom fade, with no accent hue */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: linear-gradient(180deg, var(--bg-top), var(--bg) 46%, var(--bg-bottom));
+}
+
+/* Frosted and Liquid need color behind the glass. These washes stay fixed
+   so a card refracts a different patch of wallpaper as the page scrolls. */
+html[data-ui="frosted"] body::before,
+html[data-ui="liquid"] body::before {
+  background:
+    radial-gradient(46rem 34rem at 8% -4%, color-mix(in srgb, rgb(196 165 116) 70%, var(--bg)), transparent 68%),
+    radial-gradient(40rem 32rem at 96% 12%, color-mix(in srgb, rgb(126 146 168) 68%, var(--bg)), transparent 70%),
+    radial-gradient(36rem 30rem at 72% 96%, color-mix(in srgb, rgb(118 148 124) 64%, var(--bg)), transparent 72%),
+    radial-gradient(30rem 26rem at 14% 84%, color-mix(in srgb, rgb(158 124 140) 60%, var(--bg)), transparent 70%),
+    linear-gradient(180deg, var(--bg-top), var(--bg) 46%, var(--bg-bottom));
+}
+
+/* a faint home-screen grid, fading out below the fold */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 16%, transparent) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(70rem 48rem at 50% -4%, #000 18%, transparent 76%);
+  mask-image: radial-gradient(70rem 48rem at 50% -4%, #000 18%, transparent 76%);
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: var(--ink); text-decoration: none; }
+a:hover { color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 0.4rem;
+}
+
+/* ---------- type ---------- */
+
+h1, h2, h3, h4 {
+  margin: 0 0 0.5em;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.022em;
+}
+
+h1 { font-size: clamp(2.6rem, 6.2vw, 4.5rem); letter-spacing: -0.035em; }
+h2 { font-size: clamp(1.85rem, 3.8vw, 2.85rem); letter-spacing: -0.028em; }
+h3 { font-size: clamp(1.12rem, 1.6vw, 1.32rem); letter-spacing: -0.012em; line-height: 1.2; }
+h4 { font-size: 1.02rem; line-height: 1.3; }
+
+p { margin: 0 0 1.1em; }
+p:last-child { margin-bottom: 0; }
+
+ul, ol { margin: 0 0 1.1em; padding-left: 1.2em; }
+li { margin-bottom: 0.4em; }
+
+strong { color: rgb(255 255 255); font-weight: 600; }
+
+code, kbd {
+  padding: 0.08em 0.42em;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xs);
+  background: rgb(255 255 255 / 6%);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+}
+
+hr {
+  height: 1px;
+  margin: 2.5rem 0;
+  border: 0;
+  background: var(--line);
+}
+
+/* ---------- layout helpers ---------- */
+
+.wrap {
+  width: min(100% - (var(--gutter) * 2), var(--page));
+  margin-inline: auto;
+}
+
+.section { padding-block: var(--section-y); }
+.section + .section { padding-top: 0; }
+.section-flush { padding-top: 0; }
+.section-lead { padding-block: 1.5rem 0; }
+
+.lede {
+  max-width: 40rem;
+  color: var(--ink-dim);
+  font-size: clamp(1.04rem, 1.4vw, 1.16rem);
+  line-height: 1.72;
+}
+
+.section-head { margin-bottom: clamp(1.6rem, 3.4vw, 2.6rem); }
+.section-head p { max-width: 40rem; color: var(--ink-dim); }
+.section-head.center { text-align: center; }
+.section-head.center p { margin-inline: auto; }
+
+/* the launcher's status-bar label: mono, spaced, uppercase */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.9rem;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: none;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.accent-line { color: var(--ink); }
+
+/* ---------- utilities ---------- */
+
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3.2rem;
+  left: var(--gutter);
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.skip-link:focus { top: 0; color: var(--bg); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

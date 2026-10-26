@@ -1,0 +1,289 @@
+/* Nexus Launcher user guide.
+   On screen this file only adds what the shared site styles do not cover:
+   chapter furniture, screenshots, callouts, glossary and the print manual.
+   Loaded last so these rules win over site-page.css where the two meet. */
+
+.print-only { display: none; }
+
+@media screen {
+  .doc-layout .toc,
+  html[data-ui="liquid"] .doc-layout .toc {
+    max-height: calc(100dvh - 7rem);
+    overflow: auto;
+    scrollbar-width: thin;
+  }
+}
+
+.guide-search { margin: 0 0 0.65rem; }
+
+.guide-search input {
+  width: 100%;
+  padding: 0.48rem 0.65rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.6rem;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.86rem;
+}
+
+.guide-search-meta {
+  margin: 0 0 0.4rem;
+  color: var(--ink-muted);
+  font-size: 0.75rem;
+}
+
+.guide-hits { margin: 0; padding: 0; list-style: none; }
+
+.guide-hits li { margin: 0; }
+
+.guide-hits button {
+  display: block;
+  width: 100%;
+  padding: 0.42rem 0.45rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  text-align: start;
+  cursor: pointer;
+}
+
+.guide-hits button small {
+  display: block;
+  color: var(--ink-muted);
+  font-size: 0.74rem;
+}
+
+.guide-hits button:hover,
+.guide-hits button[aria-selected="true"] { background: var(--glass-hover); }
+
+.toc.is-searching > ol { display: none; }
+
+mark.search-hit {
+  padding: 0 0.12em;
+  border-radius: 0.15rem;
+  background: color-mix(in srgb, var(--ink) 24%, transparent);
+  color: inherit;
+}
+
+.chapter-number {
+  margin: 0 0 0.35rem;
+  color: var(--cyan-300);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.manual .path { font-weight: 600; white-space: normal; }
+
+.manual .callout {
+  display: block;
+  max-width: none;
+  border: 0;
+  border-left: 0.2rem solid var(--cyan-400);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: rgb(255 255 255 / 4%);
+}
+
+.manual .callout.tip {
+  border-left-color: rgb(78 190 176);
+  background: rgb(78 190 176 / 9%);
+}
+
+.manual .callout.warning {
+  border-left-color: rgb(227 170 90);
+  background: rgb(227 170 90 / 10%);
+}
+
+.manual .callout-title {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.manual .callout p { margin: 0; color: var(--ink-dim); }
+
+.manual .muted { color: var(--ink-muted); }
+.manual .small { font-size: 0.9rem; }
+
+.shot { margin: 1.4rem 0; }
+.screen-grid .shot { margin: 0; }
+
+.screenshot-image {
+  display: block;
+  width: min(100%, 18rem);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 1.4rem;
+}
+
+.shot-pending {
+  display: none;
+  width: min(100%, 18rem);
+  aspect-ratio: 575 / 1280;
+  margin: 0 auto;
+  padding: 1rem 0.8rem;
+  place-content: center;
+  gap: 0.4rem;
+  border: 0.14rem dashed color-mix(in srgb, var(--ink) 70%, transparent);
+  border-radius: 1.4rem;
+  background: linear-gradient(180deg, rgb(11 17 28), rgb(7 11 19));
+  color: rgb(178 194 206);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.shot-pending strong { color: rgb(234 242 247); font-size: 0.8rem; }
+
+.shot-pending code {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  word-break: break-all;
+}
+
+.shot.is-missing .screenshot-image { display: none; }
+.shot.is-missing .shot-pending { display: grid; }
+
+figcaption {
+  max-width: 24rem;
+  margin: 0.65rem auto 0;
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.screen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.2rem;
+  margin: 1.4rem 0;
+}
+
+.two-column { columns: 2; column-gap: 2.5rem; }
+.two-column > * { break-inside: avoid; }
+
+.compact li { margin: 0.18rem 0; }
+
+.checklist { padding-left: 0; list-style: none; }
+.checklist li { position: relative; padding-left: 1.6rem; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; color: var(--cyan-400); }
+
+.glossary dt { margin-top: 1rem; color: var(--ink); font-weight: 700; }
+.glossary dd { margin: 0.2rem 0 0; color: var(--ink-muted); }
+
+.back-top { margin-top: 2rem; font-size: 0.85rem; }
+.guide-colophon { margin-top: 2rem; color: var(--ink-muted); font-size: 0.85rem; }
+
+@media screen and (max-width: 52rem) {
+  .two-column { columns: 1; }
+}
+
+@media print {
+  @page { size: A4; margin: 15mm 14mm 17mm; }
+
+  :root {
+    color-scheme: light;
+    --ink: rgb(24 35 42);
+    --ink-dim: rgb(55 68 76);
+    --ink-muted: rgb(76 91 99);
+    --cyan-300: rgb(24 35 42);
+    --cyan-400: rgb(24 35 42);
+    --line: rgb(205 218 223);
+  }
+
+  html { scroll-behavior: auto; }
+
+  body {
+    background: rgb(255 255 255);
+    color: var(--ink);
+    font-size: 10.5pt;
+    line-height: 1.48;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body::before,
+  body::after { display: none !important; }
+
+  .no-print,
+  .back-top { display: none !important; }
+
+  header.cover.print-only {
+    display: flex;
+    min-height: 245mm;
+    margin: -15mm -14mm 0;
+    padding: 35mm 20mm;
+    flex-direction: column;
+    justify-content: center;
+    break-after: page;
+    color: rgb(255 255 255);
+    background: linear-gradient(145deg, rgb(20 43 52), rgb(48 103 120));
+  }
+
+  .cover-brand {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+  }
+
+  .cover h1 {
+    max-width: 52rem;
+    margin: 0;
+    color: rgb(255 255 255);
+    font-size: 38pt;
+    line-height: 1.03;
+  }
+
+  .cover .subtitle { max-width: 43rem; margin: 1.5rem 0; color: rgb(224 239 243); font-size: 1.25rem; }
+  .cover .metadata { margin-top: 2rem; color: rgb(224 239 243); }
+
+  .doc-layout { display: block; padding: 0; }
+
+  .toc {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    border: 0;
+    background: none;
+    break-after: page;
+  }
+
+  .toc a { color: var(--ink); text-decoration: none; }
+  .guide-search, .guide-hits, .guide-search-meta { display: none; }
+  .prose { max-width: none; }
+  .prose > section { border-top: 0; padding-top: 0; }
+
+  .chapter { margin-top: 0; break-before: page; }
+
+  h2, h3, h4 { break-after: avoid; }
+  h2 { font-size: 22pt; }
+  h3 { font-size: 14pt; }
+  p, li { orphans: 3; widows: 3; }
+  li, .callout, figure, table { break-inside: avoid; }
+
+  .manual .callout { background: rgb(239 246 250); }
+  .manual .callout.tip { background: rgb(237 247 240); }
+  .manual .callout.warning { background: rgb(253 244 229); }
+
+  .shot.is-missing { display: none !important; }
+  .shot .screenshot-image { width: 52mm; }
+  .screen-grid { grid-template-columns: repeat(auto-fit, minmax(40mm, 1fr)); }
+  .screen-grid .screenshot-image { width: 38mm; }
+  .screen-grid figcaption { max-width: 48mm; }
+
+  .table-wrap { overflow: visible; border-color: var(--line); }
+  thead th { background: rgb(231 241 244); color: rgb(28 69 83); }
+  th, td { padding: 2mm; }
+
+  a { color: inherit; }
+}
