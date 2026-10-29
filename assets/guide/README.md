@@ -10,26 +10,26 @@ way — there are no drawn illustrations.
 
 | File | Screen to capture | Guide chapter | Status |
 | --- | --- | --- | --- |
-| `welcome-card.jpg` | The welcome card (start fresh / import from Nova / restore) | Getting started | needed |
+| `welcome-card.jpg` | The welcome card (start fresh / import from Nova / restore) | Getting started | present |
 | `icon-menu.jpg` | A home-screen icon long-pressed, menu open, rest of the screen dimmed | The home screen | present |
 | `page-cards.jpg` | Manage Pages, page thumbnails visible | Pages and the home layout | present |
 | `gestures.jpg` | `Settings › Gestures`, home-screen rows visible | Gestures | present |
 | `app-drawer-categories.jpg` | App drawer in Categories mode | The app drawer | present |
 | `folder-open.jpg` | A folder opened on the home screen | Folders | present |
-| `dock-settings.jpg` | `Settings › Dock` | The dock | needed |
+| `dock-settings.jpg` | `Settings › Dock` | The dock | present |
 | `widget-picker.jpg` | Widget picker, Nexus tab | Widgets | present |
-| `canvas-studio.jpg` | Canvas Studio, Layers / Style / Save / Apply visible | Nexus Canvas | needed |
+| `canvas-studio.jpg` | Canvas Studio, Layers / Style / Save / Apply visible | Nexus Canvas | present |
 | `theme-settings.jpg` | `Settings › Theme`, top of the page | Theme and appearance | present |
-| `icons-page.jpg` | `Settings › Icons`, with the live icon preview | Icons | needed |
-| `wallpaper-sheet.jpg` | Wallpaper sheet, preview and treatment sliders | Wallpaper and Wallpaper Studio | needed |
-| `immersive-mode.jpg` | `Settings › Immersive Mode`, preview visible | Immersive Mode | needed |
-| `island-calibration.jpg` | `Settings › Nexus Island › Calibration` | Nexus Island | needed |
+| `icons-page.jpg` | `Settings › Icons`, with the live icon preview | Icons | present |
+| `wallpaper-sheet.jpg` | Wallpaper sheet, preview and treatment sliders | Wallpaper and Wallpaper Studio | present |
+| `immersive-mode.jpg` | `Settings › Immersive Mode`, preview visible | Immersive Mode | present |
+| `island-calibration.jpg` | `Settings › Nexus Island › Calibration` | Nexus Island | present |
 | `notification-sheet.jpg` | In-launcher notification sheet | Notifications and badges | present |
-| `app-lock.jpg` | `Settings › App Lock` | App Lock | needed |
-| `backups.jpg` | `Settings › Backup & Restore`, list of backups | Backup, restore and sharing | needed |
+| `app-lock.jpg` | `Settings › App Lock` | App Lock | present |
+| `backups.jpg` | `Settings › Backup & Restore`, list of backups | Backup, restore and sharing | present |
 | `settings-hub.jpg` | `Settings`, top of the hub | Settings map | present |
-| `settings-jump.jpg` | The page list open over a settings page (top-right list icon) | Settings map | needed |
-| `settings-search.jpg` | Settings search results (for example `frost`) | Settings map | needed |
+| `settings-jump.jpg` | The page list open over a settings page (top-right list icon) | Settings map | present |
+| `settings-search.jpg` | Settings search results (for example `frost`) | Settings map | present |
 
 ## How to capture
 
