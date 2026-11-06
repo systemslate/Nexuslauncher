@@ -24,6 +24,7 @@
 
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
+.btn:disabled { opacity: 0.55; transform: none; cursor: default; }
 
 .btn-primary {
   background: var(--ink);

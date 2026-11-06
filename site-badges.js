@@ -36,7 +36,7 @@
     ch6: "i-folder", ch7: "i-pill", ch8: "i-widgets", ch9: "i-sliders", ch10: "i-palette",
     ch11: "i-shape", ch12: "i-book", ch13: "i-image", ch14: "i-fullscreen", ch15: "i-pill",
     ch16: "i-bell", ch17: "i-lock", ch18: "i-sliders", ch19: "i-book", ch20: "i-lock",
-    ch21: "i-sliders", ch22: "i-lock", ch23: "i-bell", ch24: "i-book"
+    ch21: "i-sliders", ch22: "i-shape", ch23: "i-lock", ch24: "i-bell", ch25: "i-book"
   };
   var sections = document.querySelectorAll(".chapter");
   for (var c = 0; c < sections.length; c++) {

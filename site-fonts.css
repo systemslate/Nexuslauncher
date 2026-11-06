@@ -27,13 +27,14 @@
   font-display: swap;
 }
 
-/* App typography list. Same files the launcher ships. */
-@font-face { font-family: "Nexus Default"; src: url("assets/fonts/google_sans_flex.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Roboto"; src: url("assets/fonts/roboto.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Inter"; src: url("assets/fonts/inter.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Manrope"; src: url("assets/fonts/manrope.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "IBM Plex Sans"; src: url("assets/fonts/ibm_plex_sans.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Lora"; src: url("assets/fonts/lora.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Playpen"; src: url("assets/fonts/playpen_sans.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Elms Sans"; src: url("assets/fonts/elms_sans.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Bitcount"; src: url("assets/fonts/bitcount_single.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+/* App typography list. Latin subsets of the launcher fonts, so opening Look
+   does not download the full files. */
+@font-face { font-family: "Nexus Default"; src: url("assets/fonts/google_sans_flex.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Roboto"; src: url("assets/fonts/roboto.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("assets/fonts/manrope.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "IBM Plex Sans"; src: url("assets/fonts/ibm_plex_sans.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Lora"; src: url("assets/fonts/lora.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Playpen"; src: url("assets/fonts/playpen_sans.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Elms Sans"; src: url("assets/fonts/elms_sans.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Bitcount"; src: url("assets/fonts/bitcount_single.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }

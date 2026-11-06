@@ -72,8 +72,9 @@
   var form = document.createElement("form");
   form.className = "guide-search no-print";
   form.setAttribute("role", "search");
-  form.innerHTML = '<label><span class="visually-hidden">Search the guide</span>' +
-    '<input type="search" placeholder="Search the guide" autocomplete="off" data-guide-search></label>';
+  var searchLabel = (window.NexusI18n && NexusI18n.t("guide.search", "Search the guide")) || "Search the guide";
+  form.innerHTML = '<label><span class="visually-hidden">' + searchLabel + '</span>' +
+    '<input type="search" placeholder="' + searchLabel + '" autocomplete="off" data-guide-search></label>';
   var meta = document.createElement("p");
   meta.className = "guide-search-meta no-print";
   meta.hidden = true;
@@ -181,12 +182,14 @@
     picked = 0;
     if (!list.length) {
       meta.hidden = false;
-      meta.textContent = "No matches.";
+      meta.textContent = (window.NexusI18n && NexusI18n.t("guide.none", "No matches.")) || "No matches.";
       hits.hidden = true;
       return;
     }
     meta.hidden = false;
-    meta.textContent = list.length === 1 ? "1 match" : list.length + " matches";
+    meta.textContent = list.length === 1
+      ? ((window.NexusI18n && NexusI18n.t("guide.match1", "1 match")) || "1 match")
+      : ((window.NexusI18n && NexusI18n.t("guide.matches", "{n} matches")) || "{n} matches").replace("{n}", String(list.length));
     hits.hidden = false;
     for (var i = 0; i < list.length; i++) {
       var item = document.createElement("li");
@@ -228,7 +231,7 @@
       } else {
         toc.classList.add("is-searching");
         meta.hidden = false;
-        meta.textContent = "Keep typing.";
+        meta.textContent = (window.NexusI18n && NexusI18n.t("guide.typing", "Keep typing.")) || "Keep typing.";
       }
       return;
     }

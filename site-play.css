@@ -350,7 +350,7 @@ html[data-ui="liquid"] :is(.widget, .cell, .dock, .card, .cta, .settings-widget,
 .shot { position: relative; }
 
 .shot-lightbox {
-  display: grid;
+  display: none;
   place-items: center;
   width: 100vw;
   height: 100vh;
@@ -362,6 +362,8 @@ html[data-ui="liquid"] :is(.widget, .cell, .dock, .card, .cta, .settings-widget,
   background: color-mix(in srgb, var(--bg) 88%, black);
   color: var(--ink);
 }
+
+.shot-lightbox[open] { display: grid; }
 
 .shot-lightbox img {
   display: block;

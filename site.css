@@ -114,6 +114,9 @@ body::after {
 
 img { display: block; max-width: 100%; height: auto; }
 
+/* Phone mockups stay in the launcher's left-to-right canvas. */
+.hero-art, .widget, .mini-widget, .island, .shot, .drawer-shot, .cell-shot, .tablet-shots { direction: ltr; }
+
 a { color: var(--ink); text-decoration: none; }
 a:hover { color: var(--ink); }
 

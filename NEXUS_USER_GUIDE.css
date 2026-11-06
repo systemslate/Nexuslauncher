@@ -14,6 +14,17 @@
   }
 }
 
+.guide-lang-note {
+  width: min(100% - (var(--gutter) * 2), var(--page));
+  margin: 0 auto 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: var(--surface);
+  color: var(--ink-dim);
+  font-size: 0.88rem;
+}
+
 .guide-search { margin: 0 0 0.65rem; }
 
 .guide-search input {
@@ -124,34 +135,39 @@ mark.search-hit {
   border-radius: 1.4rem;
 }
 
-.shot-pending {
-  display: none;
-  width: min(100%, 18rem);
-  aspect-ratio: 575 / 1280;
-  margin: 0 auto;
-  padding: 1rem 0.8rem;
-  place-content: center;
-  gap: 0.4rem;
-  border: 0.14rem dashed color-mix(in srgb, var(--ink) 70%, transparent);
-  border-radius: 1.4rem;
-  background: linear-gradient(180deg, rgb(11 17 28), rgb(7 11 19));
-  color: rgb(178 194 206);
-  font-size: 0.72rem;
-  line-height: 1.4;
-  text-align: center;
-}
-
-.shot-pending strong { color: rgb(234 242 247); font-size: 0.8rem; }
-
-.shot-pending code {
-  color: var(--ink);
+/* "New" (added in 1.0.3–1.1.0) and "Premium" markers beside a heading or name. */
+.new-tag,
+.premium-tag {
+  display: inline-block;
+  padding: 0.12em 0.5em;
+  border-radius: var(--pill);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  word-break: break-all;
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  vertical-align: 0.15em;
+  white-space: nowrap;
 }
 
-.shot.is-missing .screenshot-image { display: none; }
-.shot.is-missing .shot-pending { display: grid; }
+h2 .new-tag, h3 .new-tag, h2 .premium-tag, h3 .premium-tag { vertical-align: 0.3em; }
+
+.new-tag {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.premium-tag {
+  border: 1px solid color-mix(in srgb, var(--ink) 45%, transparent);
+  color: var(--ink);
+}
+
+.whats-new ul { margin: 0.4rem 0 0; color: var(--ink); }
+.whats-new a { color: var(--ink); }
+
+/* A screenshot whose file is not there yet is left out, not shown as a gap. */
+.shot.is-missing { display: none; }
 
 figcaption {
   max-width: 24rem;

@@ -132,7 +132,10 @@ html[data-wallpaper="grove"] body::before { background: var(--wall-grove); }
 }
 
 .look-ui,
-.look-type { display: grid; grid-template-columns: 1fr 1fr; }
+.look-type,
+.look-lang { display: grid; grid-template-columns: 1fr 1fr; }
+
+html[dir="rtl"] .look-row button[aria-checked="true"] { box-shadow: inset -2px 0 0 var(--ink); }
 
 .look-walls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 

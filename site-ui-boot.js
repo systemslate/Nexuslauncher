@@ -1,6 +1,19 @@
 /* Apply the saved look before first paint so the page does not flash. */
 (function () {
   var root = document.documentElement;
+
+  function matchLang() {
+    var list = navigator.languages || [navigator.language || "en"];
+    var alias = { he: "iw", in: "id", iw: "iw", pt: "pt-BR" };
+    for (var i = 0; i < list.length; i++) {
+      var tag = String(list[i] || "").toLowerCase().replace("_", "-");
+      var base = tag.split("-")[0];
+      if (tag === "pt-br" || base === "pt") return "pt-BR";
+      if (alias[base]) return alias[base];
+      if ({ en: 1, ne: 1, ar: 1, es: 1, hi: 1, id: 1, de: 1, fr: 1 }[base]) return base;
+    }
+    return "en";
+  }
   var themes = { automatic: 1, light: 1, amoled: 1, calm: 1 };
   var calms = {
     rich_sand: 1, golden_sand: 1, ocean_blue: 1, navy_ink: 1, deep_navy: 1,
@@ -28,6 +41,19 @@
     else if (wall && wall.indexOf("data:image/") === 0) {
       root.setAttribute("data-wallpaper", "custom");
       root.style.setProperty("--wallpaper", "url('" + wall + "')");
+    }
+    var langSaved = localStorage.getItem("nexus-lang") || "system";
+    var langKnown = { system: 1, en: 1, ne: 1, ar: 1, iw: 1, es: 1, "pt-BR": 1, hi: 1, id: 1, de: 1, fr: 1 };
+    if (!langKnown[langSaved]) langSaved = "system";
+    var langActive = langSaved === "system" ? matchLang() : langSaved;
+    root.setAttribute("lang", langActive === "iw" ? "he" : langActive);
+    root.setAttribute("data-lang", langActive);
+    root.setAttribute("dir", langActive === "ar" || langActive === "iw" ? "rtl" : "ltr");
+    if (langActive !== "en") document.write('<script src="i18n/' + langActive + '.js"><\/script>');
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      var bg = getComputedStyle(root).getPropertyValue("--bg").trim();
+      if (bg) meta.setAttribute("content", bg);
     }
   } catch (err) {
     /* storage can be blocked; the page stays on Dark, Default, Nexus Default */

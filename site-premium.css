@@ -1,0 +1,45 @@
+/* Home page Premium band. The card itself is .privacy-strip, so it follows
+   every UI style the same way; this only lays out the feature list. */
+
+.premium-band { align-items: start; }
+
+.premium-band .premium-thanks {
+  margin-top: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--glass);
+  color: var(--ink);
+}
+
+.premium-band .btn-row { justify-content: flex-start; margin-top: 1.2rem; }
+
+.premium-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.premium-list li {
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--glass);
+}
+
+.premium-list b {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.premium-list span { display: block; color: var(--ink-dim); font-size: 0.85rem; line-height: 1.45; }
+
+@media (max-width: 34rem) {
+  .premium-list { grid-template-columns: 1fr; }
+}

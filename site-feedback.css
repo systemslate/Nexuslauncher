@@ -106,8 +106,20 @@
   border-color: var(--ink);
 }
 
-.form-thanks h2 { margin-bottom: 0.4rem; }
-.form-thanks p { margin: 0; color: var(--ink-dim); }
+.form-thanks {
+  display: grid;
+  gap: 0.85rem;
+  justify-items: start;
+  padding: clamp(1rem, 2vw, 1.4rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.form-thanks h2,
+.form-thanks p { margin: 0; }
+
+.form-thanks p { color: var(--ink-dim); }
 
 .nexus-form[hidden],
 .form-thanks[hidden],
