@@ -40,6 +40,44 @@
 
 .premium-list span { display: block; color: var(--ink-dim); font-size: 0.85rem; line-height: 1.45; }
 
+/* The inner tiles follow the UI style too; a flat tint read as holes in the glass. */
+html[data-ui="frosted"] .premium-list li,
+html[data-ui="frosted"] .premium-band .premium-thanks {
+  border-color: color-mix(in srgb, var(--ink) 18%, transparent);
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+}
+
+html[data-ui="liquid"] .premium-list li,
+html[data-ui="liquid"] .premium-band .premium-thanks {
+  border-color: color-mix(in srgb, var(--ink) 44%, transparent);
+  background:
+    linear-gradient(155deg, color-mix(in srgb, var(--ink) 22%, transparent), transparent 40%),
+    color-mix(in srgb, var(--surface) 22%, transparent);
+  backdrop-filter: blur(6px) saturate(220%) contrast(1.15);
+  -webkit-backdrop-filter: blur(6px) saturate(220%) contrast(1.15);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ink) 60%, transparent);
+}
+
+/* Neumorphism: the band is a raised card (as the rest of the page's cards), its tiles pressed in. */
+html[data-ui="neumorph"] .premium-band {
+  border-color: transparent;
+  background: var(--surface);
+  box-shadow:
+    0.4rem 0.45rem 1rem rgb(0 0 0 / 42%),
+    -0.3rem -0.3rem 0.8rem rgb(255 255 255 / 5%);
+}
+
+html[data-ui="neumorph"] .premium-list li,
+html[data-ui="neumorph"] .premium-band .premium-thanks {
+  border-color: transparent;
+  background: var(--surface);
+  box-shadow:
+    inset 0.2rem 0.2rem 0.5rem rgb(0 0 0 / 40%),
+    inset -0.15rem -0.15rem 0.4rem rgb(255 255 255 / 5%);
+}
+
 @media (max-width: 34rem) {
   .premium-list { grid-template-columns: 1fr; }
 }
